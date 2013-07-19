@@ -1,0 +1,476 @@
+import sys, re, os, string, shutil, subprocess
+
+if sys.platform == "linux2":
+    sys.path.append('/dsGlobal/globalResources/Shotgun')
+    sys.path.append('/dsGlobal/dsCore/maya/')
+else:
+    sys.path.append('//vfx-data-server/dsGlobal/globalResources/Shotgun')
+    sys.path.append('//vfx-data-server/dsGlobal/dsCore/maya')
+    
+from shotgun_api3 import Shotgun
+import dsCommon.dsProjectUtil
+
+try:
+    import maya.cmds as cmds
+    import maya.OpenMaya as api
+    import maya.OpenMayaUI as apiUI
+except:
+    pass
+
+def getSG():
+    server = dsCommon.dsProjectUtil.listShotgunServer()
+    scriptName = "assetOpenToShotgun"
+    scriptId = "e932e9c2864c9bcdc3f3ddf8b801cc3d565bf51f"
+    sg = Shotgun(server, scriptName, scriptId)
+    return sg
+
+def actionVersionUp():
+    ###in maya usage for updating version###
+    filePath = cmds.file(q=True,sn=True)
+    #filePath = "P:/DanskeSpilApp/film/lotto_147720/q0010/s0010/3D/light/q0010_s0010_ballsLight.ma"
+    filePath = filePath.replace("P:","//vfx-data-server/dsPipe")
+    ver = sgGetLatestVersion(sg,filePath)
+    print ver
+    sgCreateShotVersion(sg,filePath,"David Williams", ver)
+
+def actionMayaV001():
+    ### usage of this def
+    filePath = cmds.file(q=True,sn=True)
+    #filePath = "P:/DanskeSpilApp/film/lotto_147720/q0010/s0010/3D/anim/q0010_s0010_anim.ma"
+    filePath = filePath.replace("P:","//vfx-data-server/dsPipe")
+    createV001File(sg,filePath)
+
+def sgTestProject(projName):
+    sg = getSG()
+    '''Create Project in shotgun '''
+    myProj = sgGetProject(sg,projName,[])
+
+    if myProj == None:
+        sg.create("Project",{"name":str(projName),"sg_status":"Active"})
+        print "created project in shotgun"
+    else:
+        print "already present"
+        
+def sgTestEpisode(projName,epiName):
+    sg = getSG()
+
+    myProj = sgGetProject(sg,projName,[])
+    myEpi = sgGetEpisode(sg,epiName,projName,[])
+    if myEpi == None:
+        episode = sg.create("Scene", {"code":str(epiName), "project":myProj})
+        print "created episode in shotgun"
+    else:
+        print "episode already present"
+
+def sgTestSeq(wf,projName,epiName,seqName):
+    sg = getSG()
+    
+    myProj = sgGetProject(sg,projName,[])
+    myEpi = sgGetEpisode(sg,epiName,projName,[])
+    mySeq = sgGetSequence(sg,seqName,projName,epiName,[])
+
+    if wf == "SEQUENCE":
+        template = sgTemplate(wf,sg)
+        if mySeq == None:
+            #add asset, that matches these critias
+            data = { 'project':myProj,'code': seqName,'scene_sg_sequence_1_scenes':[myEpi,],'sg_sequence_type':'Sequence','task_template': template}
+            result = sg.create('Sequence', data)
+            print "created seq in shotgun"
+        else:
+            print "seq already present"
+            
+    if wf == "SHOT":
+        template = sgTemplate(wf,sg)
+        if mySeq == None:
+            #add asset, that matches these critias
+            data = { 'project':myProj,'code': seqName,'scene_sg_sequence_1_scenes':[myEpi,],'sg_sequence_type':'Shot'}
+            result = sg.create('Sequence', data)
+            print "created seq in shotgun"
+        else:
+            print "seq already present"
+            
+def sgTestShot(wf,projName,epiName,seqName,shotName):
+    sg = getSG()
+    
+    myProj = sgGetProject(sg,projName,[])
+    myEpi = sgGetEpisode(sg,epiName,projName,[])
+    mySeq = sgGetSequence(sg,seqName,projName,epiName,[])
+    myShot = sgGetShot(sg,shotName,seqName,projName,epiName,[])
+
+    if wf == "SEQUENCE":
+        template = sgTemplate(wf,sg)
+    if wf == "SHOT":
+        template = sgTemplate(wf,sg)
+        
+    if myShot == None:
+        #add asset, that matches these critias
+        data = {'code':shotName,'sg_sequence':mySeq,'sg_scene':myEpi,'project':myProj,'task_template': template}
+        result = sg.create('Shot', data)
+        print "created shot in shotgun"
+    else:
+        print "shot already present"
+
+def sgTestSeqWF(projName,epiName,seqName):
+    sg = getSG()
+    mySeq = sgGetSequence(sg,seqName,projName,epiName,['code','sg_sequence_type'])
+    return mySeq
+
+def sgTemplate(wf,sg):
+    if wf == "SHOT":
+        filters = [ ['code','is', 'DucklingShotTemplate' ]]
+        template = sg.find_one('TaskTemplate',filters)
+        return template
+    elif wf == "SEQUENCE":
+        filters = [ ['code','is', 'DucklingSequenceTemplate' ]]
+        template = sg.find_one('TaskTemplate',filters)
+        return template
+
+def sgGetData(sg, sgEntity, fields = []):
+    return sg.find_one( sgEntity['type'] ,[['id','is', sgEntity['id']]], fields)
+
+def sgGetProject(sg,projName,fields = []):
+    return sg.find_one("Project", [["name", "is", str(projName)]], fields)
+
+def sgGetEpisode(sg,epiName,projName, fields = []):
+    return sg.find_one("Scene",[['code','is', str(epiName)], ['project.Project.name','is', str(projName)]], fields)
+    
+def sgGetSequence(sg,seqName,projName,epiName,fields = []):
+    return sg.find_one("Sequence", [['code','is', seqName], ['project.Project.name','is', str(projName)],['scene_sg_sequence_1_scenes.Scene.code','is', str(epiName)]],fields)
+
+def sgGetShot(sg,shotName,seqName,projName,epiName, fields = []):
+    return sg.find_one("Shot", [['code','is', shotName], ['project.Project.name','is', str(projName)],['sg_scene.Scene.code','is', str(epiName)]],fields)
+
+def sgGetShotTasks(sg,shotID,fields = []):
+    return sg.find('Task',[['entity.Shot.id','is',shotID]],fields)
+
+def sgGetAssetTasks(sg,assetID,fields = []):
+    return sg.find('Task',[['entity.Asset.id','is',assetID]],fields)
+
+def sgGetAsset(sg,aName,projName,fields = []):
+    return sg.find_one('Asset',[['code','is',aName],['project.Project.name','is',str(projName)]],fields )
+
+def sgGetVersion(sg,taskID,fields = []):
+    return sg.find('Version',[['sg_task.Task.id','is',taskID]],fields)
+
+def sgGetVersionID(sg,filePath,version):
+    pathDict = sgShotPathParce(filePath)
+    proj = sgGetProject(sg,pathDict['dsProject'],['name'])
+    projName = proj['name']
+    epiObj = sgGetEpisode(sg,pathDict['dsEpisode'],projName,['code','id','sg_status_list','shots','sequence'])
+    epiName = epiObj['code']
+    seqObj = sgGetSequence(sg,pathDict['dsSeq'],projName,epiName,['code'])
+    seqName = seqObj['code']
+    shotObj = sgGetShot(sg,pathDict['dsShot'],seqName,projName,epiName,['code','id'])
+    shotName = shotObj['code']
+    shotID = shotObj['id']
+    shotTasks = sgGetShotTasks(sg,shotID,['content','id','step'])
+    for task in shotTasks:
+        if str(task['step']['name']) == str(pathDict['dsStep']):
+            taskObj = task
+            break
+    taskID = taskObj['id']
+    
+    return taskID
+
+def sgGetPeople():
+    sg = getSG()
+    myPeople = sg.find("HumanUser", [["groups.Group.code","is","ducklings"]], ["name","projects","sg_initials"]) 
+    return myPeople
+
+def sgGetUser(sg,userName):
+    myPeople = sg.find("HumanUser", [["groups.Group.code","is","ducklings"]], ["name","projects","sg_initials"])
+    for user in myPeople:
+        if userName == str(user['name']) or userName == str(user['sg_initials']):
+            myUser = user
+            return myUser
+def sgShotPathParce(filePath):
+    pathDict = {}
+    if re.search("rawRender",filePath):
+        match = re.search('(?P<dsRelative>.*)\/(?P<dsProject>\w*)\/film\/(?P<dsEpisode>\w*)\/(?P<dsSeq>\w*)\/(?P<dsShot>\w*)\/rawRender\/(?P<dsRenderLayer>\w*)\/(?P<fileName>\w*)', filePath)
+        match = match.groupdict()
+    if re.search("/3D/",filePath):
+        match = re.search('(?P<dsRelative>.*)\/(?P<dsProject>\w*)\/film\/(?P<dsEpisode>\w*)\/(?P<dsSeq>\w*)\/(?P<dsShot>\w*)\/3D\/(?P<dsStep>\w*)\/(?P<fileName>\w*)', filePath)
+        match = match.groupdict()
+    if re.search("compOut",filePath):
+        match = re.search('(?P<dsRelative>.*)\/(?P<dsProject>\w*)\/film\/(?P<dsEpisode>\w*)\/(?P<dsSeq>\w*)\/(?P<dsShot>\w*)\/comp\/compOut\/(?P<dsVersion>\w*)\/(?P<fileName>\w*)', filePath)
+        match = match.groupdict()
+    if match:
+        pathDict = match
+    return pathDict
+
+def sgGetLatestVersion(sg,filePath):
+    pathDict = sgShotPathParce(filePath)
+    proj = sgGetProject(sg,str(pathDict['dsProject']),['name'])
+    projName = proj['name']
+    epiObj = sgGetEpisode(sg,str(pathDict['dsEpisode']),projName,['code','id','sg_status_list','shots','sequence'])
+    epiName = epiObj['code']
+    seqObj = sgGetSequence(sg,str(pathDict['dsSeq']),projName,epiName,['code'])
+    seqName = seqObj['code']
+    shotObj = sgGetShot(sg,str(pathDict['dsShot']),seqName,projName,epiName,['code','id'])
+    shotName = shotObj['code']
+    shotID = shotObj['id']
+    shotTasks = sgGetShotTasks(sg,shotID,['content','id','step'])
+    for task in shotTasks:
+        if str(task['step']['name']) == str(pathDict['dsStep']):
+            taskObj = task
+            taskID = taskObj['id']
+            taskVersions = sgGetVersion(sg,taskID,['code'])
+            verList = []
+            for task in taskVersions:
+                verList.append(task['code'])
+            return 'v%03d' %int(len(verList) + 1)
+
+def sgConvertIcon(frameOne):
+    if sys.platform == "linux2":
+        rvio = '/usr/local/rv-Linux-x86-64-3.12.15/bin/rvio'
+        cmd = rvio + ' ' + frameOne + ' -o '+ frameOne[:-3] + 'jpg'
+        #os.system(cmd)
+	subprocess.Popen(cmd,creationFlags = shell=True)
+        #subprocess.Popen(cmd, creationflags = subprocess.CREATE_NEW_CONSOLE)
+        return frameOne[:-3]+ "jpg"
+    else:
+        rvio = '"C:/Program Files (x86)/Tweak/RV-3.12.16-32/bin/rvio.exe"'
+        cmd = rvio + ' ' + frameOne + ' -o '+ frameOne[:-3] + 'jpg'
+        #os.system(cmd)
+        subprocess.Popen(cmd, creationflags = subprocess.CREATE_NEW_CONSOLE)
+        return frameOne[:-3]+ "jpg"
+   
+def sgGetFrameInfo(filePath):
+    fileSplit = filePath.split("/")
+    extSplit = filePath.split(".")
+    renderlayerDir = filePath.replace("/" + fileSplit[-1],"")
+    fileList = os.listdir(renderlayerDir)
+    fListClean = []
+    for file in fileList:
+        fileSplit = file.split(".")
+        if fileSplit[-1] == extSplit[-1]:
+            fListClean.append(file)
+    fListClean.sort()
+    frame_count = len(fListClean)
+    startFrame = fListClean[0]
+    startObj = re.search("[0-9][0-9][0-9][0-9]\.",startFrame)
+    sg_start_frame = startObj.group()[:-1]
+    endFrame = fListClean[-1]
+    endObj = re.search("[0-9][0-9][0-9][0-9]\.",endFrame)
+    sg_end_frame = endObj.group()[:-1]
+    
+    frameInfo = {'frame_count':frame_count,'sg_start_frame':sg_start_frame,'sg_end_frame':sg_end_frame,'startFrame':startFrame,'endFrame':endFrame}
+    return frameInfo
+
+def testVersion(taskID,version,projName,epiName,seqName,shotName):
+    sg = getSG()
+    
+    myProj = sgGetProject(sg,projName,[])
+    myEpi = sgGetEpisode(sg,epiName,projName,[])
+    mySeq = sgGetSequence(sg,seqName,projName,epiName,[])
+    myShot = sgGetShot(sg,shotName,seqName,projName,epiName,['id'])
+    shotID = myShot['id']
+    myTasks = sgGetShotTasks(sg,shotID,['id'])
+    for task in myTasks:
+        if int(task['id']) == int(taskID):
+            match = True
+            print getVersionID()
+       
+def sgPublish3DFrames(filePath,renderFile,user):
+    sg = getSG()
+    icon = sgConvertIcon(filePath)
+    usObj = sgGetUser(sg,user)
+    versionObj = re.search("v[0-9][0-9][0-9]",renderFile)
+    version = versionObj.group()
+    
+    pathDict = sgShotPathParce(filePath)
+    proj = sgGetProject(sg,str(pathDict['dsProject']),['name'])
+    projName = proj['name']
+    epiObj = sgGetEpisode(sg,str(pathDict['dsEpisode']),projName,['code','id','sg_status_list','shots','sequence'])
+    epiName = epiObj['code']
+    seqObj = sgGetSequence(sg,str(pathDict['dsSeq']),projName,epiName,['code'])
+    seqName = seqObj['code']
+    shotObj = sgGetShot(sg,str(pathDict['dsShot']),seqName,projName,epiName,['code','id'])
+    shotName = shotObj['code']
+    shotID = shotObj['id']
+    shotTasks = sgGetShotTasks(sg,shotID,['content','id','step'])
+    dsRenderLayer = pathDict['dsRenderLayer']
+    for task in shotTasks:
+        if task['content'] == 'rawRender':
+            taskObj = task
+            taskID = task['id']
+    myProj = sgGetProject(sg,projName,[])
+    mySeq = sgGetSequence(sg,seqName,projName,epiName,[])
+    myEpi = sgGetEpisode(sg,epiName,projName,[])
+    myShot = sgGetShot(sg,shotName,seqName,projName,epiName,[])
+
+    fileSplit = filePath.split("/")
+    renderlayerDir = filePath.replace("/" + fileSplit[-1],"")
+    fileList = os.listdir(renderlayerDir)
+    
+    if fileList != []:
+        filter = [['sg_task','is',taskObj]]
+        dictFromSG = sg.find('Version',filter )
+
+        frameInfo = sgGetFrameInfo(filePath)
+        frame_count = int(frameInfo['frame_count'])
+        sg_first_frame = int(frameInfo['sg_start_frame'])
+        sg_last_frame = int(frameInfo['sg_end_frame'])
+        startFrame = frameInfo['startFrame']
+        endFrame = frameInfo['endFrame']
+        
+        filePath = filePath.replace(pathDict['dsRelative'] + "/" ,"")
+        renderFile = renderFile.replace(pathDict['dsRelative'] + "/","")
+        versions = sgGetVersion(sg,taskID,['code','id','sg_render_layer'])
+        match = False
+        for ver in versions:
+            if ver['code'] == version and ver['sg_render_layer'] == pathDict['dsRenderLayer']:
+                match = True
+                print "Version Already present"
+                break
+            else:
+                match = False
+        if match != True:
+            data = {'code':str(version),'user':usObj,'project':proj,'sg_sequence':[mySeq],'sg_task':taskObj,'sg_path_to_frames':filePath,'sg_path':renderFile,'sg_render_layer':dsRenderLayer,'entity':myShot,'image':str(icon),'frame_count':frame_count,'sg_first_frame':sg_first_frame,'sg_last_frame':sg_last_frame}
+            result = sg.create('Version', data)
+            print "created " + str(version) + " in shotGun"
+
+def sgPublish2DFrames(filePath,renderFile,user):
+    sg = getSG()
+    usObj = sgGetUser(sg,user)
+    icon = sgConvertIcon(filePath)
+    versionObj = re.search("v[0-9][0-9][0-9]",renderFile)
+    version = versionObj.group()
+    
+    fileDirList = filePath.split("/")
+    fileDir = filePath.replace("/" + fileDirList[-1],"")
+    
+    outPutList = os.listdir(fileDir)
+    for file in outPutList:
+        if re.search(".nk",file):
+            sg_file_name = file
+            break
+    
+    pathDict = sgShotPathParce(filePath)
+    proj = sgGetProject(sg,str(pathDict['dsProject']),['name'])
+    projName = proj['name']
+    epiObj = sgGetEpisode(sg,str(pathDict['dsEpisode']),projName,['code','id','sg_status_list','shots','sequence'])
+    epiName = epiObj['code']
+    seqObj = sgGetSequence(sg,str(pathDict['dsSeq']),projName,epiName,['code'])
+    seqName = seqObj['code']
+    shotObj = sgGetShot(sg,str(pathDict['dsShot']),seqName,projName,epiName,['code','id'])
+    shotName = shotObj['code']
+    shotID = shotObj['id']
+    shotTasks = sgGetShotTasks(sg,shotID,['content','id','step'])
+    dsVersion = pathDict['dsVersion']
+    
+
+    for task in shotTasks:
+        if task['step']['name'] == 'comp':
+            taskObj = task
+            taskID = task['id']
+    myProj = sgGetProject(sg,projName,[])
+    mySeq = sgGetSequence(sg,seqName,projName,epiName,[])
+    myEpi = sgGetEpisode(sg,epiName,projName,[])
+    myShot = sgGetShot(sg,shotName,seqName,projName,epiName,[])
+
+    fileSplit = filePath.split("/")
+    compOutDir = filePath.replace("/" + fileSplit[-1],"")
+    fileList = os.listdir(compOutDir)
+
+    if fileList != []:
+        filter = [['sg_task','is',taskObj]]
+        dictFromSG = sg.find('Version',filter )
+
+        frameInfo = sgGetFrameInfo(filePath)
+        frame_count = int(frameInfo['frame_count'])
+        sg_first_frame = int(frameInfo['sg_start_frame'])
+        sg_last_frame = int(frameInfo['sg_end_frame'])
+        startFrame = frameInfo['startFrame']
+        endFrame = frameInfo['endFrame']
+
+        filePath = filePath.replace(pathDict['dsRelative'] + "/" ,"")
+        renderFile = renderFile.replace(pathDict['dsRelative'] + "/","")
+        versions = sgGetVersion(sg,taskID,['code','id','sg_render_layer'])
+        match = False
+        for ver in versions:
+            if ver['code'] == version :
+                match = True
+                print "Version Already present"
+                break
+            else:
+                match = False
+        if match != True:
+            data = {'code':str(version),'user':usObj,'project':proj,'sg_sequence':[mySeq],'sg_file_name':sg_file_name,'sg_task':taskObj,'sg_path_to_frames':filePath,'sg_path':renderFile,'entity':myShot,'image':str(icon),'frame_count':frame_count,'sg_first_frame':sg_first_frame,'sg_last_frame':sg_last_frame}
+            result = sg.create('Version', data)
+            print "created " + str(version) + " in shotGun"
+
+def sgCreateShotVersion(sg,filePath,user,version):
+    description=raw_input('Please enter a description:')
+    cmds.file(f=True,s=True)
+    pathDict = sgShotPathParce(filePath)
+    thumbPath = sgThumbnail(filePath,version)
+    versionUp(filePath,version)
+    proj = sgGetProject(sg,pathDict['dsProject'],['name'])
+    projName = proj['name']
+    epiObj = sgGetEpisode(sg,pathDict['dsEpisode'],projName,['code','id','sg_status_list','shots','sequence'])
+    epiName = epiObj['code']
+    seqObj = sgGetSequence(sg,pathDict['dsSeq'],projName,epiName,['code'])
+    seqName = seqObj['code']
+    shotObj = sgGetShot(sg,pathDict['dsShot'],seqName,projName,epiName,['code','id'])
+    shotName = shotObj['code']
+    shotID = shotObj['id']
+    shotTasks = sgGetShotTasks(sg,shotID,['content','id','step'])
+    for task in shotTasks:
+        if str(task['step']['name']) == str(pathDict['dsStep']):
+            taskObj = task
+            break
+    
+    taskID = taskObj['id']
+    taskVersions = sgGetVersion(sg,taskID,['code'])
+    myUser = sgGetUser(sg,user)
+    
+    filePathList = filePath.split("/")
+    pathToFile = filePath.replace("/" + filePathList[-1], "")
+    pathToFile = pathToFile.replace(pathDict['dsRelative'] + "/","")
+    heroName = filePathList[-1]
+    version_file_name = heroName.replace(".ma","_" + version + ".ma")
+    
+    testVersion = sg.find('Version',[['code','is',str(version)],['project','is',proj],['user','is',myUser],['sg_task','is',taskObj],['entity','is',shotObj]])
+    if testVersion == []:
+        data = {'code':str(version),'project':proj,'user':myUser,'sg_task':taskObj,'sg_file_name':heroName,'sg_path':pathToFile,'sg_render_layer':None,'description':description,'image':thumbPath,'sg_version_file_name':version_file_name,'entity':shotObj}
+        result = sg.create('Version', data)
+        print "created " + version + " in shotGun"
+
+def sgThumbUpdate(sg,type,ID,thumbPath):
+    print type
+    print ID
+    print thumbPath
+    sg.update(type,type[int(ID)], {"image":str(thumbPath)})
+
+def versionUp(filePath,version):
+    if not re.search("/version/",filePath):
+        filePathList = filePath.split("/")
+        versionPath = filePath.replace(filePathList[-1],"version")
+        if not os.path.isdir(versionPath):
+            os.makedirs(versionPath)
+        version_file_name = filePathList[-1].replace(".ma","_" + version + ".ma")
+        shutil.copy(filePath,versionPath + "/" + version_file_name)
+    else:
+        print "your working in a verison and not the hero file "
+    
+def sgThumbnail(filePath,version):
+    pathDict = sgShotPathParce(filePath)
+    thumbNailPath = pathDict['dsRelative'] + "/" + pathDict['dsProject'] + "/film/" + pathDict['dsEpisode'] + "/" + pathDict['dsSeq'] + "/" + pathDict['dsShot'] + "/3D/data/icon/"
+    if not os.path.isdir(thumbNailPath):
+        os.makedirs(thumbNailPath)
+    view = apiUI.M3dView.active3dView()
+    image = api.MImage()
+    view.readColorBuffer(image, True)
+    thumbPath = thumbNailPath + pathDict['dsSeq'] + "_" + pathDict['dsShot'] + "_" + pathDict['dsTask'] + "_" + version + ".png"
+    image.writeToFile(thumbPath , 'png')
+    return thumbPath
+
+def createV001File(sg,filePath):
+    presetMaya = "//vfx-data-server/dsGlobal/globalMaya/Presets/defaultMaya/default.ma"
+    if not os.path.isfile(filePath):
+        shutil.copy(presetMaya,filePath)
+        print "created file " + filePath
+        if sgGetLatestVersion(sg,filePath) == "v001":
+            versionUp(filePath,version)
+            sgCreateShotVersion(sg,filePath,"David Williams","v001")

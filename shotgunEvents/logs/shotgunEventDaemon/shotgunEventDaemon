@@ -1,0 +1,8 @@
+2013-06-24 16:25:48,776 - engine - INFO - Using Shotgun version 3.0.9.beta2
+2013-06-24 16:25:48,789 - engine - INFO - Loading plugin at //vfx-data-server/dsGlobal/dsCore/shotgun/shotgunEvents/plugins\connectingFields.py
+2013-06-24 16:25:50,561 - engine - INFO - Loading plugin at //vfx-data-server/dsGlobal/dsCore/shotgun/shotgunEvents/plugins\makeProjectFolders.py
+2013-06-24 16:25:50,697 - engine - INFO - Loading plugin at //vfx-data-server/dsGlobal/dsCore/shotgun/shotgunEvents/plugins\projectCreation.py
+2013-06-24 16:29:42,737 - engine - INFO - Using Shotgun version 3.0.9.beta2
+2013-06-24 16:29:42,752 - engine - INFO - Loading plugin at //vfx-data-server/dsGlobal/dsCore/shotgun/shotgunEvents/plugins\connectingFields.py
+2013-06-24 16:29:44,539 - engine - INFO - Loading plugin at //vfx-data-server/dsGlobal/dsCore/shotgun/shotgunEvents/plugins\makeProjectFolders.py
+2013-06-24 16:29:45,469 - engine - INFO - Loading plugin at //vfx-data-server/dsGlobal/dsCore/shotgun/shotgunEvents/plugins\projectCreation.py

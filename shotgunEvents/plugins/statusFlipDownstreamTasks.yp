@@ -1,0 +1,54 @@
+# -*- coding: utf-8 -*-
+"""
+For detailed information please see
+http://shotgunsoftware.github.com/shotgunEvents/api.html
+"""
+import logging
+import pprint
+import sg_utils
+import sys, re, os
+import platform
+reload(sg_utils) 
+
+if sys.platform == "linux2":
+    sys.path.append('/dsGlobal/dsCore/dsCommon')
+else:
+    sys.path.append('//vfx-data-server/dsGlobal/dsCore/maya/dsCommon')
+### Setting up local shotgun hook
+apiKey = '114101ed238549f285df856f65e89a089c50d7fa'
+scriptName = "eventTrigger_connectingFields"
+url = "https://duckling.shotgunstudio.com"
+
+
+def registerCallbacks(reg):
+    matchEvents = {
+        'Shotgun_Task_Change': ['sg_status_list'],
+    }
+    
+    reg.registerCallback(scriptName, apiKey, flipDownstreamTasks, matchEvents, None)
+
+
+def flipDownstreamTasks(sg, logger, event, args):
+    """Flip downstream Tasks to 'rdy' if all of their upstream Tasks are 'fin'"""
+    
+    # we only care about Tasks that have been finalled
+    if 'new_value' not in event['meta'] or event['meta']['new_value'] != 'fin':
+        return
+    
+    # downtream tasks that are currently wtg
+    ds_filters = [['upstream_tasks', 'is', event['entity']],['sg_status_list', 'is', 'wtg'],]
+    fields = ['upstream_tasks']
+    
+    for ds_task in sg.find("Task", ds_filters, fields):
+        change_status = True
+        # don't change status unless *all* upstream tasks are fin
+        if len(ds_task["upstream_tasks"]) > 1:
+            logger.debug("Task #%d has multiple upstream Tasks", event['entity']['id'])
+            us_filters = [['downstream_tasks', 'is', ds_task], ['sg_status_list', 'is_not', 'fin'],]
+            
+            if len(sg.find("Task", us_filters)) > 0:
+                change_status = False
+        
+        if change_status:
+            sg.update("Task",ds_task['id'], data={'sg_status_list' : 'rdy'})
+            logger.info("Set Task #%s to 'rdy'", ds_task['id'])

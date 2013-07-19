@@ -1,0 +1,243 @@
+# -*- coding: utf-8 -*-
+"""
+For detailed information please see
+
+http://shotgunsoftware.github.com/shotgunEvents/api.html
+"""
+import logging, platform
+import pprint
+import sg_utils
+reload(sg_utils) # to force refresh on plugin reload, as the server will have to restart otherwise.
+
+
+
+### Setting up local shotgun hook
+apiKey = '87d07d20907d7b8116b7350f5d6b70732d36f5de'
+scriptName = "eventTrigger_autoFillFields"
+url = "https://duckling.shotgunstudio.com"
+
+
+
+
+def registerCallbacks(reg):
+	"""Register all necessary or appropriate callbacks for this plugin."""
+
+
+	# Specify who should recieve email notifications when they are sent out.
+	#
+	#reg.setEmails('me@mydomain.com')
+
+	# Use a preconfigured logging.Logger object to report info to log file or
+	# email. By default error and critical messages will be reported via email
+	# and logged to file, all other levels are logged to file.
+	#
+	#reg.logger.debug('Loading logArgs plugin.')
+
+	# Register a callback into the event processing system.
+	#
+	# Arguments:
+	# - Shotgun script name
+	# - Shotgun script key
+	# - Callable
+	# - Argument to pass through to the callable
+	# - A filter to match events to so the callable is only invoked when
+	#   appropriate
+	#
+
+	filter_setShotFields = {'Shotgun_Shot_New': ['*']}
+	reg.registerCallback( scriptName, apiKey, callback_setShotFields, filter_setShotFields, None)
+	
+	filter_setSequenceFields = {'Shotgun_Sequence_New': ['*']}
+	reg.registerCallback( scriptName, apiKey, callback_setSequenceFields, filter_setSequenceFields, None)
+	
+	filter_setEpisodeFields = {'Shotgun_Scene_New': ['*']}
+	reg.registerCallback( scriptName, apiKey, callback_setEpisodeFields, filter_setEpisodeFields, None)
+
+	#filter_setTaskFields = {'Shotgun_Task_New': ['*']}
+	#reg.registerCallback( scriptName, apiKey, callback_setTaskSoftware, filter_setTaskFields, None)
+	
+	#reg.registerCallback(scriptName, apiKey, callback_updateAssetFields, {'Shotgun_Asset_Change': ['*']}, None)
+
+	# Set the logging level for this particular plugin. Let error and above
+	# messages through but block info and lower. This is particularly usefull
+	# for enabling and disabling debugging on a per plugin basis.
+	#reg.logger.setLevel(logging.ERROR)
+	reg.logger.setLevel(logging.INFO)
+	
+def getPipe():
+	if platform.system() == "Linux":
+		dsPipe = "/dsPipe/"
+		return dsPipe
+	else:
+		dsPipe = "//vfx-data-server/dsPipe/"
+		return dsPipe
+
+def callback_updateAssetFields(sg,logger,event,args):
+	try:
+		fields = ['code','image','project','sg_status_list','id','sg_subtype','sg_asset_type','sg_episode']
+		sgVal = sg_utils.sgGetEntityData(sg, event["entity"], fields)
+		if sgVal['sg_status_list'] == 'hld':
+			dsPipe = getPipe()
+			aName = sgVal['code']
+			assetID = sgVal['id']
+			proj = sgVal['project']
+			projName = sgVal['project']['name']
+			type = sgVal['sg_asset_type']
+			subType = sgVal['sg_subtype']
+			status = sgVal['sg_status_list']
+
+			assetTasks = sg.find("Task",[['entity.Asset.id','is',assetID]],['entity','content','step','image','sg_status_list','id','sg_software'])
+			pipe = getPipe()
+
+			###------------Update Thumbnails --------------------###
+			#thumbPath = pipe + projName + "/asset/3D/" + type + "/" + subType + "/" + aName + "/images/icon/" + aName + ".png"
+			#if sgVal['image'] == None:
+			#	sg.update("Asset",sgVal['id'], {"image":str(thumbPath)})		
+			###------------Update software ----------------------###
+			maya = [{'type': 'CustomNonProjectEntity10', 'name': 'Maya', 'id': 1}]
+			nuke = [{'type': 'CustomNonProjectEntity10', 'name': 'Nuke', 'id': 2}]
+			for asset in assetTasks:
+				if asset['sg_software'] == None:
+					if assetTasks['step']['name'] == "effect":
+						sg.update("Task",asset['id'],{ 'sg_software': maya})
+					if assetTasks['step']['name'] == "anim":
+						sg.update("Task",asset['id'],{ 'sg_software': maya})
+					if assetTasks['step']['name'] == "light":
+						sg.update("Task",asset['id'],{ 'sg_software': maya})
+					if assetTasks['step']['name'] == "comp":
+						sg.update("Task",asset['id'],{ 'sg_software': nuke})
+					if assetTasks['step']['name'] == "roto":
+						sg.update("Task",asset['id'],{ 'sg_software': nuke})
+			###------------Update Version's ----------------------###
+				assetVersion = sg.find("Version",[['sg_task.Task.id','is',asset['id']]],['code','sg_file_name','sg_version_file_name','sg_path','image','sg_status_list','id'])
+				sg_path = projName + "/asset/3D/" + type + "/" + subType + "/" + aName + "/dev/maya/"
+				sg_file_name = aName + "_" + asset['content'] + ".ma"
+				
+				
+				if assetVersion == None:
+					sg_version_file_name = aName + "_" + asset['content'] + "_v001.ma"
+					data = { "code":"v001","project":proj,"entity":sgVal,"sg_file_name":sg_file_name,"sg_path":sg_path,'sg_version_file_name':sg_version_file_name,'sg_task':asset}
+					result = sg.create('Version', data)
+					print "created Version 001 for " + sg_file_name
+				else:
+					for assetVer in assetVersion:
+						if assetVer['sg_path'] == None:
+							print sg_path
+							sg.update("Version",assetVer['id'],{'sg_path':sg_path})
+						if assetVer['sg_file_name'] == None:
+							print sg_file_name
+							sg.update("Version",assetVer['id'],{'sg_file_name':sg_file_name})
+						if assetVer['sg_version_file_name'] == None:
+							aNewName = assetVer['sg_file_name']
+							print aNewName[:-3] + "_" + assetVer['code'] + ".ma"
+							sg.update("Version",assetVer['id'],{'sg_version_file_name': aNewName[:-3] + "_" + assetVersion['code'] + ".ma" })
+	except:
+		pass
+
+def callback_setTaskSoftware(sg,logger,event,args):
+	print "task Update"
+	fields = ['step','sg_software']
+	sgObj = sg_utils.sgGetEntityData(sg, event["entity"], fields)
+
+	maya = [{'type': 'CustomNonProjectEntity10', 'name': 'Maya', 'id': 1}]
+	nuke = [{'type': 'CustomNonProjectEntity10', 'name': 'Nuke', 'id': 2}]
+
+	if sgObj['step']['name'] == "effect":
+		setData = { 'sg_software': maya,}
+	if sgObj['step']['name'] == "anim":
+		setData = { 'sg_software': maya,}
+	if sgObj['step']['name'] == "light":
+		setData = { 'sg_software': maya,}
+	if sgObj['step']['name'] == "comp":
+		setData = { 'sg_software': nuke,}
+	if sgObj['step']['name'] == "roto":
+		setData = { 'sg_software': nuke,}
+   
+	sg_utils.sgUpdateEntity(sg, event["entity"], setData)
+#----------------------------------------------------------------------------------
+# 
+#----------------------------------------------------------------------------------
+
+def callback_setShotFields(sg, logger, event, args):
+    #logger.info("\nEvent:\n%s\n" % pprint.pformat(event))
+    
+    # Setting up Shotgun dataObject values
+    sgTaskTemplate = {'type': 'TaskTemplate', 'name': 'DucklingShotTemplate', 'id': 7}
+    description = "This is an automated shot description"
+    
+    setData = { 
+        "description": description,
+        "task_template": sgTaskTemplate,
+    }
+    
+    setFieldsOnCreate(sg, logger, event, setData)
+        
+#----------------------------------------------------------------------------------
+# 
+#----------------------------------------------------------------------------------
+
+def callback_setSequenceFields(sg, logger, event, args):
+    #logger.info("\nEvent:\n%s\n" % pprint.pformat(event))
+    
+    # Setting up Shotgun dataObject values
+    sgTaskTemplate = {'type': 'TaskTemplate', 'name': 'DucklingSequenceTemplate', 'id': 10}
+    description = "This is a premade Sequence description"
+    seqType = "shot"
+    
+    setData = { 
+        "description": description,
+        "task_template": sgTaskTemplate,
+        "sg_sequence_type": seqType,
+    }
+    
+    setFieldsOnCreate(sg, logger, event, setData)
+       
+#----------------------------------------------------------------------------------
+# 
+#----------------------------------------------------------------------------------
+
+def callback_setEpisodeFields(sg, logger, event, args):
+    #logger.info("\nEvent:\n%s\n" % pprint.pformat(event))
+    
+    # Setting up Shotgun dataObject values
+    description = "This is a fantastic and well thought out Episode description"
+    
+    setData = { 
+        "description": description,
+    }
+    
+    setFieldsOnCreate(sg, logger, event, setData)
+
+#----------------------------------------------------------------------------------
+# Setting entity fields on creation, if fields are currently empty
+#----------------------------------------------------------------------------------
+
+def setFieldsOnCreate(sg, logger, event, setData):
+
+    try:    
+        sgEntity = sg_utils.sgGetEntityData( sg, event["entity"], setData.keys() )
+
+        # Removing keys from setData if shot fields have values already
+        for field in setData.keys():
+            try:
+                if sgEntity[field] != None:
+                    print "Field got value: Popping field: ", field, "\n"
+                    setData.pop(field)
+            except KeyError:
+                print "Field not existing: Popping field: ", field, "\n"
+                setData.pop(field)
+        
+        # Setting session for browser response
+        sg_utils.sgSetSessionUUID(sg, logger, event )
+                                      
+        logger.info("\nUpdating Entity(" + `event["entity"]["id"]` + ") Fields...\n")
+        logger.info("\nsetData Object:\n" + pprint.pformat(setData) + "\n")
+        
+        sg_utils.sgUpdateEntity(sg, event["entity"], setData)
+        
+    except:
+        ### Handle errors here
+        logger.error("\nCaught Error on Event:\n%s\n" % pprint.pformat(event))
+        raise
+
+	
