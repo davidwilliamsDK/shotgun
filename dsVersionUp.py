@@ -14,6 +14,9 @@ def getMayaWindow():
     ptr = mui.MQtUtil.mainWindow()
     return sip.wrapinstance(long(ptr), QtCore.QObject)
 
+import dsCheck
+reload(dsCheck)
+dsCheck.dsMDCheck()
 
 if sys.platform == "linux2":
     uiFile = '/dsGlobal/dsCore/shotgun/sgVersionUp.ui'
