@@ -1,4 +1,15 @@
 #!/usr/bin/python
+
+# Adding Duckling paths
+import sys
+os = sys.platform
+
+if os == "linux2":
+    sys.path.append("/dsGlobal/globalResources/Shotgun/")
+else:
+    sys.path.append("//vfx-data-server/dsGlobal/globalResources/Shotgun/")
+
+#!/usr/bin/python
 #
 # Init file for Shotgun event daemon
 #
@@ -39,21 +50,12 @@ import time
 import types
 import traceback
 
-
-sys.path.append('//vfx-data-server/dsGlobal/globalResources/Shotgun')
-
 from distutils.version import StrictVersion
 
 try:
     import cPickle as pickle
 except ImportError:
     import pickle
-
-if sys.platform == 'win32':
-    import win32serviceutil
-    import win32service
-    import win32event
-    import servicemanager
 
 import daemonizer
 import shotgun_api3 as sg
@@ -93,16 +95,16 @@ def _setFilePathOnLogger(logger, path):
 
 def _removeHandlersFromLogger(logger, handlerTypes=None):
     """
-    Remove all handlers or handlers of a specified type from a logger.
+Remove all handlers or handlers of a specified type from a logger.
 
-    @param logger: The logger who's handlers should be processed.
-    @type logger: A logging.Logger object
-    @param handlerTypes: A type of handler or list/tuple of types of handlers
-        that should be removed from the logger. If I{None}, all handlers are
-        removed.
-    @type handlerTypes: L{None}, a logging.Handler subclass or
-        I{list}/I{tuple} of logging.Handler subclasses.
-    """
+@param logger: The logger who's handlers should be processed.
+@type logger: A logging.Logger object
+@param handlerTypes: A type of handler or list/tuple of types of handlers
+that should be removed from the logger. If I{None}, all handlers are
+removed.
+@type handlerTypes: L{None}, a logging.Handler subclass or
+I{list}/I{tuple} of logging.Handler subclasses.
+"""
     for handler in logger.handlers:
         if handlerTypes is None or isinstance(handler, handlerTypes):
             logger.removeHandler(handler)
@@ -110,19 +112,19 @@ def _removeHandlersFromLogger(logger, handlerTypes=None):
 
 def _addMailHandlerToLogger(logger, smtpServer, fromAddr, toAddrs, emailSubject, username=None, password=None, secure=None):
     """
-    Configure a logger with a handler that sends emails to specified
-    addresses.
+Configure a logger with a handler that sends emails to specified
+addresses.
 
-    The format of the email is defined by L{LogFactory.EMAIL_FORMAT_STRING}.
+The format of the email is defined by L{LogFactory.EMAIL_FORMAT_STRING}.
 
-    @note: Any SMTPHandler already connected to the logger will be removed.
+@note: Any SMTPHandler already connected to the logger will be removed.
 
-    @param logger: The logger to configure
-    @type logger: A logging.Logger instance
-    @param toAddrs: The addresses to send the email to.
-    @type toAddrs: A list of email addresses that will be passed on to the
-        SMTPHandler.
-    """
+@param logger: The logger to configure
+@type logger: A logging.Logger instance
+@param toAddrs: The addresses to send the email to.
+@type toAddrs: A list of email addresses that will be passed on to the
+SMTPHandler.
+"""
     if smtpServer and fromAddr and toAddrs and emailSubject:
         mailHandler = CustomSMTPHandler(smtpServer, fromAddr, toAddrs, emailSubject, (username, password), secure)
         mailHandler.setLevel(logging.ERROR)
@@ -221,14 +223,14 @@ class Config(ConfigParser.ConfigParser):
         return path
 
 
-class Engine(object):
+class Engine(daemonizer.Daemon):
     """
-    The engine holds the main loop of event processing.
-    """
+The engine holds the main loop of event processing.
+"""
 
     def __init__(self, configPath):
         """
-        """
+"""
         self._continue = True
         self._eventIdData = {}
 
@@ -267,7 +269,16 @@ class Engine(object):
 
         self.log.setLevel(self.config.getLogLevel())
 
-        super(Engine, self).__init__()
+        super(Engine, self).__init__('shotgunEvent', self.config.getEnginePIDFile())
+
+    def start(self, daemonize=True):
+        if not daemonize:
+            # Setup the stdout logger
+            handler = logging.StreamHandler()
+            handler.setFormatter(logging.Formatter("%(levelname)s:%(name)s:%(message)s"))
+            logging.getLogger().addHandler(handler)
+
+        super(Engine, self).start(daemonize)
 
     def setEmailsOnLogger(self, logger, emails):
         # Configure the logger for email output
@@ -295,17 +306,15 @@ class Engine(object):
             msg = 'Argument emails should be True to use the default addresses, False to not send any emails or a list of recipient addresses. Got %s.'
             raise ValueError(msg % type(emails))
 
-        _addMailHandlerToLogger(
-            logger, (smtpServer, smtpPort), fromAddr, toAddrs, emailSubject, username, password, secure
-        )
+        _addMailHandlerToLogger(logger, (smtpServer, smtpPort), fromAddr, toAddrs, emailSubject, username, password, secure)
 
-    def start(self):
+    def _run(self):
         """
-        Start the processing of events.
+Start the processing of events.
 
-        The last processed id is loaded up from persistent storage on disk and
-        the main loop is started.
-        """
+The last processed id is loaded up from persistent storage on disk and
+the main loop is started.
+"""
         # TODO: Take value from config
         socket.setdefaulttimeout(60)
 
@@ -322,18 +331,17 @@ class Engine(object):
         except KeyboardInterrupt, err:
             self.log.warning('Keyboard interrupt. Cleaning up...')
         except Exception, err:
-            msg = 'Crash!!!!! Unexpected error (%s) in main loop.\n\n%s'
-            self.log.critical(msg, type(err), traceback.format_exc(err))
+            self.log.critical('Crash!!!!! Unexpected error (%s) in main loop.\n\n%s', type(err), traceback.format_exc(err))
 
     def _loadEventIdData(self):
         """
-        Load the last processed event id from the disk
+Load the last processed event id from the disk
 
-        If no event has ever been processed or if the eventIdFile has been
-        deleted from disk, no id will be recoverable. In this case, we will try
-        contacting Shotgun to get the latest event's id and we'll start
-        processing from there.
-        """
+If no event has ever been processed or if the eventIdFile has been
+deleted from disk, no id will be recoverable. In this case, we will try
+contacting Shotgun to get the latest event's id and we'll start
+processing from there.
+"""
         eventIdFile = self.config.getEventIdFile()
 
         if eventIdFile and os.path.exists(eventIdFile):
@@ -375,7 +383,7 @@ class Engine(object):
                 order = [{'column':'id', 'direction':'desc'}]
                 try:
                     result = self._sg.find_one("EventLogEntry", filters=[], fields=['id'], order=order)
-                except (sg.ProtocolError, sg.ResponseError, socket.error), err:
+                except (sg.ProtocolError, sg.ResponseError, socket.err), err:
                     conn_attempts = self._checkConnectionAttempts(conn_attempts, str(err))
                 except Exception, err:
                     msg = "Unknown error: %s" % str(err)
@@ -391,26 +399,26 @@ class Engine(object):
 
     def _mainLoop(self):
         """
-        Run the event processing loop.
+Run the event processing loop.
 
-        General behavior:
-        - Load plugins from disk - see L{load} method.
-        - Get new events from Shotgun
-        - Loop through events
-        - Loop through each plugin
-        - Loop through each callback
-        - Send the callback an event
-        - Once all callbacks are done in all plugins, save the eventId
-        - Go to the next event
-        - Once all events are processed, wait for the defined fetch interval time and start over.
+General behavior:
+- Load plugins from disk - see L{load} method.
+- Get new events from Shotgun
+- Loop through events
+- Loop through each plugin
+- Loop through each callback
+- Send the callback an event
+- Once all callbacks are done in all plugins, save the eventId
+- Go to the next event
+- Once all events are processed, wait for the defined fetch interval time and start over.
 
-        Caveats:
-        - If a plugin is deemed "inactive" (an error occured during
-          registration), skip it.
-        - If a callback is deemed "inactive" (an error occured during callback
-          execution), skip it.
-        - Each time through the loop, if the pidFile is gone, stop.
-        """
+Caveats:
+- If a plugin is deemed "inactive" (an error occured during
+registration), skip it.
+- If a callback is deemed "inactive" (an error occured during callback
+execution), skip it.
+- Each time through the loop, if the pidFile is gone, stop.
+"""
         self.log.debug('Starting the event processing loop.')
         while self._continue:
             # Process events
@@ -430,16 +438,16 @@ class Engine(object):
 
         self.log.debug('Shuting down event processing loop.')
 
-    def stop(self):
+    def _cleanup(self):
         self._continue = False
 
     def _getNewEvents(self):
         """
-        Fetch new events from Shotgun.
+Fetch new events from Shotgun.
 
-        @return: Recent events that need to be processed by the engine.
-        @rtype: I{list} of Shotgun event dictionaries.
-        """
+@return: Recent events that need to be processed by the engine.
+@rtype: I{list} of Shotgun event dictionaries.
+"""
         nextEventId = None
         for newId in [coll.getNextUnprocessedEventId() for coll in self._pluginCollections]:
             if newId is not None and (nextEventId is None or newId < nextEventId):
@@ -466,11 +474,11 @@ class Engine(object):
 
     def _saveEventIdData(self):
         """
-        Save an event Id to persistant storage.
+Save an event Id to persistant storage.
 
-        Next time the engine is started it will try to read the event id from
-        this location to know at which event it should start processing.
-        """
+Next time the engine is started it will try to read the event id from
+this location to know at which event it should start processing.
+"""
         eventIdFile = self.config.getEventIdFile()
 
         if eventIdFile is not None:
@@ -502,8 +510,8 @@ class Engine(object):
 
 class PluginCollection(object):
     """
-    A group of plugin files in a location on the disk.
-    """
+A group of plugin files in a location on the disk.
+"""
     def __init__(self, engine, path):
         if not os.path.isdir(path):
             raise ValueError('Invalid path: %s' % path)
@@ -550,14 +558,14 @@ class PluginCollection(object):
 
     def load(self):
         """
-        Load plugins from disk.
+Load plugins from disk.
 
-        General behavior:
-        - Loop on all paths.
-        - Find all valid .py plugin files.
-        - Loop on all plugin files.
-        - For any new plugins, load them, otherwise, refresh them.
-        """
+General behavior:
+- Loop on all paths.
+- Find all valid .py plugin files.
+- Loop on all plugin files.
+- For any new plugins, load them, otherwise, refresh them.
+"""
         newPlugins = {}
 
         for basename in os.listdir(self.path):
@@ -580,18 +588,18 @@ class PluginCollection(object):
 
 class Plugin(object):
     """
-    The plugin class represents a file on disk which contains one or more
-    callbacks.
-    """
+The plugin class represents a file on disk which contains one or more
+callbacks.
+"""
     def __init__(self, engine, path):
         """
-        @param engine: The engine that instanciated this plugin.
-        @type engine: L{Engine}
-        @param path: The path of the plugin file to load.
-        @type path: I{str}
+@param engine: The engine that instanciated this plugin.
+@type engine: L{Engine}
+@param path: The path of the plugin file to load.
+@type path: I{str}
 
-        @raise ValueError: If the path to the plugin is not a valid file.
-        """
+@raise ValueError: If the path to the plugin is not a valid file.
+"""
         self._engine = engine
         self._path = path
 
@@ -646,39 +654,39 @@ class Plugin(object):
 
     def isActive(self):
         """
-        Is the current plugin active. Should it's callbacks be run?
+Is the current plugin active. Should it's callbacks be run?
 
-        @return: True if this plugin's callbacks should be run, False otherwise.
-        @rtype: I{bool}
-        """
+@return: True if this plugin's callbacks should be run, False otherwise.
+@rtype: I{bool}
+"""
         return self._active
 
     def setEmails(self, *emails):
         """
-        Set the email addresses to whom this plugin should send errors.
+Set the email addresses to whom this plugin should send errors.
 
-        @param emails: See L{LogFactory.getLogger}'s emails argument for info.
-        @type emails: A I{list}/I{tuple} of email addresses or I{bool}.
-        """
+@param emails: See L{LogFactory.getLogger}'s emails argument for info.
+@type emails: A I{list}/I{tuple} of email addresses or I{bool}.
+"""
         self._engine.setEmailsOnLogger(self.logger, emails)
 
     def load(self):
         """
-        Load/Reload the plugin and all its callbacks.
+Load/Reload the plugin and all its callbacks.
 
-        If a plugin has never been loaded it will be loaded normally. If the
-        plugin has been loaded before it will be reloaded only if the file has
-        been modified on disk. In this event callbacks will all be cleared and
-        reloaded.
+If a plugin has never been loaded it will be loaded normally. If the
+plugin has been loaded before it will be reloaded only if the file has
+been modified on disk. In this event callbacks will all be cleared and
+reloaded.
 
-        General behavior:
-        - Try to load the source of the plugin.
-        - Try to find a function called registerCallbacks in the file.
-        - Try to run the registration function.
+General behavior:
+- Try to load the source of the plugin.
+- Try to find a function called registerCallbacks in the file.
+- Try to run the registration function.
 
-        At every step along the way, if any error occurs the whole plugin will
-        be deactivated and the function will return.
-        """
+At every step along the way, if any error occurs the whole plugin will
+be deactivated and the function will return.
+"""
         # Check file mtime
         mtime = os.path.getmtime(self._path)
         if self._mtime is None:
@@ -712,18 +720,17 @@ class Plugin(object):
             self._engine.log.critical('Did not find a registerCallbacks function in plugin at %s.', self._path)
             self._active = False
 
-    def registerCallback(self, sgScriptName, sgScriptKey, callback, matchEvents=None, args=None, stopOnError=True):
+    def registerCallback(self, sgScriptName, sgScriptKey, callback, matchEvents=None, args=None):
         """
-        Register a callback in the plugin.
-        """
+Register a callback in the plugin.
+"""
         global sg
         sgConnection = sg.Shotgun(self._engine.config.getShotgunURL(), sgScriptName, sgScriptKey)
-        self._callbacks.append(Callback(callback, self, self._engine, sgConnection, matchEvents, args, stopOnError))
+        self._callbacks.append(Callback(callback, self, self._engine, sgConnection, matchEvents, args))
 
     def process(self, event):
         if event['id'] in self._backlog:
             if self._process(event):
-                self.logger.info('Processed id %d from backlog.' % event['id'])
                 del(self._backlog[event['id']])
                 self._updateLastEventId(event['id'])
         elif self._lastEventId is not None and event['id'] <= self._lastEventId:
@@ -756,44 +763,44 @@ class Plugin(object):
         if self._lastEventId is not None and eventId > self._lastEventId + 1:
             expiration = datetime.datetime.now() + datetime.timedelta(minutes=5)
             for skippedId in range(self._lastEventId + 1, eventId):
-                self.logger.info('Adding event id %d to backlog.', skippedId)
+                self.logger.debug('Adding event id %d to backlog.', skippedId)
                 self._backlog[skippedId] = expiration
         self._lastEventId = eventId
 
     def __iter__(self):
         """
-        A plugin is iterable and will iterate over all its L{Callback} objects.
-        """
+A plugin is iterable and will iterate over all its L{Callback} objects.
+"""
         return self._callbacks.__iter__()
 
     def __str__(self):
         """
-        Provide the name of the plugin when it is cast as string.
+Provide the name of the plugin when it is cast as string.
 
-        @return: The name of the plugin.
-        @rtype: I{str}
-        """
+@return: The name of the plugin.
+@rtype: I{str}
+"""
         return self.getName()
 
 
 class Registrar(object):
     """
-    See public API docs in docs folder.
-    """
+See public API docs in docs folder.
+"""
     def __init__(self, plugin):
         """
-        Wrap a plugin so it can be passed to a user.
-        """
+Wrap a plugin so it can be passed to a user.
+"""
         self._plugin = plugin
         self._allowed = ['logger', 'setEmails', 'registerCallback']
 
     def getLogger(self):
         """
-        Get the logger for this plugin.
+Get the logger for this plugin.
 
-        @return: The logger configured for this plugin.
-        @rtype: L{logging.Logger}
-        """
+@return: The logger configured for this plugin.
+@rtype: L{logging.Logger}
+"""
         # TODO: Fix this ugly protected member access
         return self.logger
 
@@ -805,28 +812,28 @@ class Registrar(object):
 
 class Callback(object):
     """
-    A part of a plugin that can be called to process a Shotgun event.
-    """
+A part of a plugin that can be called to process a Shotgun event.
+"""
 
-    def __init__(self, callback, plugin, engine, shotgun, matchEvents=None, args=None, stopOnError=True):
+    def __init__(self, callback, plugin, engine, shotgun, matchEvents=None, args=None):
         """
-        @param callback: The function to run when a Shotgun event occurs.
-        @type callback: A function object.
-        @param engine: The engine that will dispatch to this callback.
-        @type engine: L{Engine}.
-        @param shotgun: The Shotgun instance that will be used to communicate
-            with your Shotgun server.
-        @type shotgun: L{sg.Shotgun}
-        @param logger: An object to log messages with.
-        @type logger: I{logging.Logger}
-        @param matchEvents: The event filter to match events against before invoking callback.
-        @type matchEvents: dict
-        @param args: Any datastructure you would like to be passed to your
-            callback function. Defaults to None.
-        @type args: Any object.
+@param callback: The function to run when a Shotgun event occurs.
+@type callback: A function object.
+@param engine: The engine that will dispatch to this callback.
+@type engine: L{Engine}.
+@param shotgun: The Shotgun instance that will be used to communicate
+with your Shotgun server.
+@type shotgun: L{sg.Shotgun}
+@param logger: An object to log messages with.
+@type logger: I{logging.Logger}
+@param matchEvents: The event filter to match events against before invoking callback.
+@type matchEvents: dict
+@param args: Any datastructure you would like to be passed to your
+callback function. Defaults to None.
+@type args: Any object.
 
-        @raise TypeError: If the callback is not a callable object.
-        """
+@raise TypeError: If the callback is not a callable object.
+"""
         if not callable(callback):
             raise TypeError('The callback must be a callable object (function, method or callable class instance).')
 
@@ -837,7 +844,6 @@ class Callback(object):
         self._logger = None
         self._matchEvents = matchEvents
         self._args = args
-        self._stopOnError = stopOnError
         self._active = True
 
         # Find a name for this object
@@ -875,14 +881,14 @@ class Callback(object):
 
     def process(self, event):
         """
-        Process an event with the callback object supplied on initialization.
+Process an event with the callback object supplied on initialization.
 
-        If an error occurs, it will be logged appropriately and the callback
-        will be deactivated.
+If an error occurs, it will be logged appropriately and the callback
+will be deactivated.
 
-        @param event: The Shotgun event to process.
-        @type event: I{dict}
-        """
+@param event: The Shotgun event to process.
+@type event: I{dict}
+"""
         # set session_uuid for UI updates
         if self._engine._use_session_uuid:
             self._shotgun.set_session_uuid(event['session_uuid'])
@@ -899,36 +905,35 @@ class Callback(object):
 
             msg = 'An error occured processing an event.\n\n%s\n\nLocal variables at outer most frame in plugin:\n\n%s'
             self._logger.critical(msg, traceback.format_exc(), pprint.pformat(stack[1].f_locals))
-            if self._stopOnError:
-                self._active = False
+            self._active = False
 
         return self._active
 
     def isActive(self):
         """
-        Check if this callback is active, i.e. if events should be passed to it
-        for processing.
+Check if this callback is active, i.e. if events should be passed to it
+for processing.
 
-        @return: True if this callback should process events, False otherwise.
-        @rtype: I{bool}
-        """
+@return: True if this callback should process events, False otherwise.
+@rtype: I{bool}
+"""
         return self._active
 
     def __str__(self):
         """
-        The name of the callback.
+The name of the callback.
 
-        @return: The name of the callback
-        @rtype: I{str}
-        """
+@return: The name of the callback
+@rtype: I{str}
+"""
         return self._name
 
 
 class CustomSMTPHandler(logging.handlers.SMTPHandler):
     """
-    A custom SMTPHandler subclass that will adapt it's subject depending on the
-    error severity.
-    """
+A custom SMTPHandler subclass that will adapt it's subject depending on the
+error severity.
+"""
 
     LEVEL_SUBJECTS = {
         logging.ERROR: 'ERROR - Shotgun event daemon.',
@@ -963,10 +968,10 @@ class CustomSMTPHandler(logging.handlers.SMTPHandler):
 
     def emit(self, record):
         """
-        Emit a record.
+Emit a record.
 
-        Format the record and send it to the specified addressees.
-        """
+Format the record and send it to the specified addressees.
+"""
         # If the socket timeout isn't None, in Python 2.4 the socket read
         # following enabling starttls() will hang. The default timeout will
         # be reset to 60 later in 2 locations because Python 2.4 doesn't support
@@ -1008,116 +1013,40 @@ class CustomSMTPHandler(logging.handlers.SMTPHandler):
 
 
 class EventDaemonError(Exception):
-    """
-    Base error for the Shotgun event system.
-    """
     pass
 
 
 class ConfigError(EventDaemonError):
-    """
-    Used when an error is detected in the config file.
-    """
     pass
 
 
-if sys.platform == 'win32':
-    class WindowsService(win32serviceutil.ServiceFramework):
-        """
-        Windows service wrapper
-        """
-        _svc_name_ = "ShotgunEventDaemon"
-        _svc_display_name_ = "Shotgun Event Handler"
-
-        def __init__(self, args):
-            win32serviceutil.ServiceFramework.__init__(self, args)
-            self.hWaitStop = win32event.CreateEvent(None, 0, 0, None)
-            self._engine = Engine(_getConfigPath())
-
-        def SvcStop(self):
-            """
-            Stop the Windows service.
-            """
-            self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)
-            win32event.SetEvent(self.hWaitStop)
-            self._engine.stop()
-
-        def SvcDoRun(self):
-            """
-            Start the Windows service.
-            """
-            servicemanager.LogMsg(
-                servicemanager.EVENTLOG_INFORMATION_TYPE,
-                servicemanager.PYS_SERVICE_STARTED,
-                (self._svc_name_, '')
-            )
-            self.main()
-
-        def main(self):
-            """
-            Primary Windows entry point
-            """
-            self._engine.start()
-
-
-class LinuxDaemon(daemonizer.Daemon):
-    """
-    Linux Daemon wrapper or wrapper used for foreground operation on Windows
-    """
-    def __init__(self):
-        self._engine = Engine(_getConfigPath())
-        super(LinuxDaemon, self).__init__('shotgunEvent', self._engine.config.getEnginePIDFile())
-
-    def start(self, daemonize=True):
-        if not daemonize:
-            # Setup the stdout logger
-            handler = logging.StreamHandler()
-            handler.setFormatter(logging.Formatter("%(levelname)s:%(name)s:%(message)s"))
-            logging.getLogger().addHandler(handler)
-
-        super(LinuxDaemon, self).start(daemonize)
-
-    def _run(self):
-        """
-        Start the engine's main loop
-        """
-        self._engine.start()
-
-    def _cleanup(self):
-        self._engine.stop()
-
-
 def main():
-    """
-    """
-    action = None
-    if len(sys.argv) > 1:
+    if len(sys.argv) == 2:
+        daemon = Engine(_getConfigPath())
+
+        # Find the function to call on the daemon
         action = sys.argv[1]
-
-    if sys.platform == 'win32' and action != 'foreground':
-        win32serviceutil.HandleCommandLine(WindowsService)
-        return 0
-
-    if action:
-        daemon = LinuxDaemon()
-
-        # Find the function to call on the daemon and call it
         func = getattr(daemon, action, None)
-        if action[:1] != '_' and func is not None:
-            func()
-            return 0
 
-        print "Unknown command: %s" % action
+        # If no function was found, report error.
+        if action[:1] == '_' or func is None:
+            print "Unknown command: %s" % action
+            return 2
 
-    print "usage: %s start|stop|restart|foreground" % sys.argv[0]
-    return 2
+        # Call the requested function
+        func()
+    else:
+        print "usage: %s start|stop|restart|foreground" % sys.argv[0]
+        return 2
+
+    return 0
 
 
 def _getConfigPath():
     """
-    Get the path of the shotgunEventDaemon configuration file.
-    """
-    paths = ['/etc', os.path.dirname(__file__)]
+Get the path of the shotgunEventDaemon configuration file.
+"""
+    paths = ['/etc']
 
     # Get the current path of the daemon script
     scriptPath = sys.argv[0]

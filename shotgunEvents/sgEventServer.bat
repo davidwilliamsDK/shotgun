@@ -1,1 +1,1 @@
-c:\\Python27\python.exe \\vfx-data-server\dsGlobal\dsCore\shotgun\shotgunEvents\src\shotgunEventDaemon.py foreground
+c:\\Python26\python.exe \\vfx-data-server\dsGlobal\dsCore\shotgun\shotgunEvents\src\shotgunEventDaemon.py foreground

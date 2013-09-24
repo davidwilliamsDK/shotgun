@@ -54,10 +54,10 @@ def registerCallbacks(reg):
 
 	#reg.registerCallback( scriptName, apiKey, callback_episodeUpdate, {'Shotgun_Scene_Change': ['sg_update_folder_structure']}, None)
 	#reg.registerCallback( scriptName, apiKey, callback_seqUpdate, {'Shotgun_Sequence_Change': ['sg_update_folder_structure']}, None)
-	#reg.registerCallback( scriptName, apiKey, callback_shotUpdate, {'Shotgun_Shot_Change': ['sg_update_folder_structure']}, None)
+	reg.registerCallback( scriptName, apiKey, callback_shotUpdate, {'Shotgun_Shot_Change': ['sg_update_folder_structure']}, None)
 
-	filter_createProjectFolder = {'Shotgun_Scene_Change': ['sg_status']}
-	reg.registerCallback(scriptName, apiKey, callback_createProjectFolder, filter_createProjectFolder, None)
+	#filter_createProjectFolder = {'Shotgun_Scene_Change': ['sg_status']}
+	#reg.registerCallback(scriptName, apiKey, callback_createProjectFolder, filter_createProjectFolder, None)
 
 	# Set the logging level for this particular plugin. Let error and above
 	# messages through but block info and lower. This is particularly usefull
@@ -182,7 +182,7 @@ def callback_shotUpdate(sg,logger,event,args):
 	fields = ['sg_update_folder_structure']
 	sgVal = sg_utils.sgGetEntityData(sg, event["entity"], fields)
 	if sgVal['sg_update_folder_structure'] == 'Update':
-		createShotFolderStruct(sg, event, args)
+		#createShotFolderStruct(sg, event, args)
 		resetUpdateField(sg,event,args)
 
 def createShotFolderStruct(sg, event, args):

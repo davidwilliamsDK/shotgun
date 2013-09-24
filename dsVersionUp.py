@@ -26,8 +26,9 @@ else:
 form_class, base_class = uic.loadUiType(uiFile)
 class Window(base_class, form_class):
 
-    def __init__(self, parent=None):
-        base_class.__init__(self, parent)
+
+    def __init__( self, parent = getMayaWindow(), *args ):
+        super( base_class, self ).__init__( parent )
         self.setupUi(self)
         self.setUp()
         

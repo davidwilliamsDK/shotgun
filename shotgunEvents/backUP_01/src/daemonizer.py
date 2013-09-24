@@ -16,13 +16,11 @@ else:
     DEVNULL = "/dev/null"
 
 
-
 class Daemon(object):
     """
-    A generic daemon class.
-    
-    Usage: subclass the Daemon class and override the _run() method
-    """
+A generic daemon class.
+Usage: subclass the Daemon class and override the _run() method
+"""
     def __init__(self, serviceName, pidfile, stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL):
         super(Daemon, self).__init__()
         
@@ -34,10 +32,10 @@ class Daemon(object):
     
     def _daemonize(self):
         """
-        Do the UNIX double-fork magic, see Stevens' "Advanced
-        Programming in the UNIX Environment" for details (ISBN 0201563177)
-        http://www.erlenstar.demon.co.uk/unix/faq_2.html#SEC16
-        """
+Do the UNIX double-fork magic, see Stevens' "Advanced
+Programming in the UNIX Environment" for details (ISBN 0201563177)
+http://www.erlenstar.demon.co.uk/unix/faq_2.html#SEC16
+"""
         try:
             pid = os.fork()
             if pid > 0:
@@ -91,8 +89,8 @@ class Daemon(object):
     
     def start(self, daemonize=True):
         """
-        Start the daemon
-        """
+Start the daemon
+"""
         # Check for a pidfile to see if the daemon already runs
         try:
             pf = file(self._pidfile,'r')
@@ -121,8 +119,8 @@ class Daemon(object):
     
     def stop(self):
         """
-        Stop the daemon
-        """
+Stop the daemon
+"""
         # Get the pid from the pidfile
         try:
             pf = file(self._pidfile,'r')
@@ -155,21 +153,21 @@ class Daemon(object):
     
     def restart(self, daemonize=True):
         """
-        Restart the daemon
-        """
+Restart the daemon
+"""
         self.stop()
         self.start(daemonize)
     
     def _run(self):
         """
-        You should override this method when you subclass Daemon. It will be
-        called after the process has been daemonized by start() or restart().
-        """
+You should override this method when you subclass Daemon. It will be
+called after the process has been daemonized by start() or restart().
+"""
         raise NotImplementedError('You must implement the method in your class.')
     
     def _cleanup(self):
         """
-        You should override this method when you subclass Daemon. It will be
-        called when the daemon exits.
-        """
+You should override this method when you subclass Daemon. It will be
+called when the daemon exits.
+"""
         raise NotImplementedError('You must implement the method in your class.')

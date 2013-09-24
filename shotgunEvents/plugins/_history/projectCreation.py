@@ -51,7 +51,6 @@ def registerCallbacks(reg):
 def projectCreationHandler():
   pass
 
-
 	
 """	
 def versionStatusUpdate(sg, logger, event, args):
@@ -94,17 +93,6 @@ def versionStatusUpdate(sg, logger, event, args):
             action = "\nChanging status on Task:%s(%i) from %s to %s" % (vTask['content'], vTask['id'], vTask['sg_status_list'], taskStatus)
             logger.info(trigger + action)
             sg_utils.sgSetTaskStatus(sg, vTask, taskStatus)
-            
-            
-
-
-
-
-
-
-
-
-
 
 	
 def taskStatusUpdate(sg, logger, event, args):
