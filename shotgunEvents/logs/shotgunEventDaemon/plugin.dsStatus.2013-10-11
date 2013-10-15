@@ -1,0 +1,158 @@
+2013-10-11 09:32:39,540 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:32:39,556 - plugin.dsStatus.callback_shotUpdate - INFO - 2836
+2013-10-11 09:32:41,677 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:32:41,677 - plugin.dsStatus.callback_shotUpdate - INFO - 2836
+2013-10-11 09:32:46,046 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:32:46,046 - plugin.dsStatus.callback_shotUpdate - INFO - 2836
+2013-10-11 09:32:47,996 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:32:47,996 - plugin.dsStatus.callback_shotUpdate - INFO - 2836
+2013-10-11 09:34:25,059 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:34:25,059 - plugin.dsStatus.callback_shotUpdate - INFO - 2833
+2013-10-11 09:34:28,601 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:34:28,601 - plugin.dsStatus.callback_shotUpdate - INFO - 2833
+2013-10-11 09:34:32,782 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:34:32,782 - plugin.dsStatus.callback_shotUpdate - INFO - 2833
+2013-10-11 09:34:34,684 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 09:34:34,684 - plugin.dsStatus.callback_shotUpdate - INFO - 2833
+2013-10-11 09:53:23,549 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:42:15,094 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:42:16,138 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:44:21,204 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:45:16,615 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:45:58,361 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-11 11:45:58,392 - plugin.dsStatus.callback_shotUpdate - INFO - 2916
+2013-10-11 11:46:05,006 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:47:07,657 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-11 11:47:09,061 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-11 11:47:09,716 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-11 11:47:10,387 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-11 11:47:11,604 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:47:22,164 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:22,928 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:23,647 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:24,209 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-11 11:47:25,394 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:26,065 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:26,627 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-11 11:47:28,857 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:32,321 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:33,552 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:34,348 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:47:37,000 - plugin.dsStatus - INFO - Adding event id 760408 to backlog.
+2013-10-11 11:48:15,252 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 11:52:38,283 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:40,546 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:42,776 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:45,039 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:47,269 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:49,562 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:51,887 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:54,118 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:56,364 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:58,595 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:00,825 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:03,118 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:05,349 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:07,581 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:09,812 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:12,042 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:14,273 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:16,503 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:18,782 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:21,012 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:23,243 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:25,473 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:27,704 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:29,936 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:32,165 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:34,397 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:36,690 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:38,921 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:41,151 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:43,444 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:45,676 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:47,907 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:50,138 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:52,414 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:54,989 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:57,220 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:59,497 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:01,727 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:03,959 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:06,190 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:08,421 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:10,651 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:12,881 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:15,160 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:17,391 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:19,762 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:21,993 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:24,239 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:26,470 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:28,700 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:30,931 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:33,209 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:35,456 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:37,686 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:39,917 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:42,148 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:44,378 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:46,609 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:48,903 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:51,148 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:53,380 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:55,611 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:57,842 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:00,088 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:02,335 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:04,611 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:06,842 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:09,073 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:11,305 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:13,535 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:15,766 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:17,996 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:20,321 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:22,552 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:24,782 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:27,013 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:29,244 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:31,490 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:33,940 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:36,171 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:39,040 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:41,272 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:43,503 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:45,733 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:47,964 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:50,194 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:52,457 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:54,734 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:56,966 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:59,197 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:01,411 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:03,642 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:05,872 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:08,104 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:10,381 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:12,628 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:14,858 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:17,089 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:19,321 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:21,598 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:23,828 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:26,059 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:28,290 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:30,520 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:32,752 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:34,983 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:37,213 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:39,506 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:41,737 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:43,969 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:46,198 - plugin.dsStatus - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 12:48:06,720 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-11 14:16:46,907 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-11 14:16:47,546 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-11 14:16:50,496 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-11 14:16:54,020 - plugin.dsStatus.callback_shotUpdate - INFO - ip

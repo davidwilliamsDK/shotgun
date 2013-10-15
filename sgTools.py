@@ -18,7 +18,7 @@ except:
     pass
 
 def getSG():
-    server = dsCommon.dsProjectUtil.listShotgunServer()
+    server = "https://duckling.shotgunstudio.com"
     scriptName = "assetOpenToShotgun"
     scriptId = "e932e9c2864c9bcdc3f3ddf8b801cc3d565bf51f"
     sg = Shotgun(server, scriptName, scriptId)
@@ -34,7 +34,6 @@ def getPageDict(projName):
             #print str(tmp['id']) + " " + str(tmp['entity_type'])
             pageDict[tmp['entity_type']] = tmp['id']
     return pageDict
-
 
 def sgGetPage(pr,ep,sq,val):
     
@@ -67,15 +66,16 @@ def sgTestProject(projName):
     else:
         print "already present"
 
-def sgTestEpisode(projName,epiName):
+def sgTestEpisode(projName,epiName,fps,rez):
     sg = getSG()
 
     myProj = sgGetProject(projName,[])
     myEpi = sgGetEpisode(epiName,projName,[])
     if myEpi == None:
-        episode = sg.create("Scene", {"code":str(epiName), "project":myProj})
+        episode = sg.create("Scene", {"code":str(epiName), "project":myProj,'sg_resolution':rez,'sg_fps':fps})
         print "created episode in shotgun"
     else:
+        
         print "episode already present"
 
 def sgTestSeq(wf,projName,epiName,seqName):

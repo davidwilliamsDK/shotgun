@@ -1,26 +1,38 @@
-import sys, sip, os, shutil
-from PyQt4 import QtGui, QtCore, uic
-
-def getMayaWindow():
-    'Get the maya main window as a QMainWindow instance'
-    ptr = mui.MQtUtil.mainWindow()
-    return sip.wrapinstance(long(ptr), QtCore.QObject)
-
-import maya.cmds as cmds
-import maya.OpenMaya as api
-import maya.OpenMayaUI as mui
-import sgTools
-
+import sys, os, shutil
 
 if sys.platform == "linux2":
     uiFile = '/dsGlobal/dsCore/shotgun/dsQuickLog.ui'
 else:
     uiFile = '//vfx-data-server/dsGLobal/dsCore/shotgun/dsQuickLog.ui'
+    
+import maya.cmds as cmds
+import maya.OpenMaya as api
+import maya.OpenMayaUI as mui
+import sgTools
+import dsCommon.dsOsUtil as dsOsUtil;reload(dsOsUtil)
 
-form_class, base_class = uic.loadUiType(uiFile)
+pyVal = dsOsUtil.getPyGUI()
+
+if pyVal == "PySide":
+    from PySide import QtCore,QtGui
+    from shiboken import wrapInstance
+    form_class, base_class = dsOsUtil.loadUiType(uiFile)
+    
+if pyVal == "PyQt":
+    from PyQt4 import QtGui, QtCore, uic
+    import sip
+    form_class, base_class = uic.loadUiType(uiFile)
+
+def getMayaWindow():
+    main_window_ptr = mui.MQtUtil.mainWindow()
+    if pyVal == "PySide":
+        return wrapInstance(long(main_window_ptr), QtGui.QWidget)
+    else:
+        return sip.wrapinstance(long(main_window_ptr), QtCore.QObject)
+
 class Window(base_class, form_class):
     def __init__(self, parent=getMayaWindow()):
-        super(base_class, self).__init__(parent)
+        super(Window, self).__init__(parent)
         self.setupUi(self)
 
         if sys.platform == "linux2":
@@ -143,6 +155,10 @@ class Window(base_class, form_class):
 
         return self.config_path
 def dsQuickLog():
-    global myWindow
-    myWindow = Window()
-    myWindow.show()
+    global dsQLWindow
+    try:
+        dsQLWindow.close()
+    except:
+        pass
+    dsQLWindow = Window()
+    dsQLWindow.show()

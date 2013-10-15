@@ -1,0 +1,150 @@
+2013-10-11 09:32:38,698 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2836 fin
+2013-10-11 09:32:41,460 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2836 fin
+2013-10-11 09:32:45,812 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2836 fin
+2013-10-11 09:32:47,778 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2836 fin
+2013-10-11 09:34:24,154 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2833 fin
+2013-10-11 09:34:28,382 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2833 fin
+2013-10-11 09:34:32,516 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2833 fin
+2013-10-11 09:34:34,450 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2833 fin
+2013-10-11 09:53:23,533 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-11 11:42:16,124 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 704 act
+2013-10-11 11:42:50,740 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 162 Active
+2013-10-11 11:43:36,417 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 162 Active
+2013-10-11 11:44:21,204 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 697 act
+2013-10-11 11:45:16,615 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 704 act
+2013-10-11 11:45:29,329 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 162 Active
+2013-10-11 11:45:57,565 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2916 fin
+2013-10-11 11:46:05,006 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 697 clsd
+2013-10-11 11:47:09,045 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 612 ip
+2013-10-11 11:47:09,716 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 612 ip
+2013-10-11 11:47:10,387 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 612 ip
+2013-10-11 11:47:11,604 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 704 act
+2013-10-11 11:47:22,694 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:23,428 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:24,209 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 612 ip
+2013-10-11 11:47:25,160 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:25,831 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:26,627 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 704 act
+2013-10-11 11:47:28,622 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:31,993 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:33,335 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:34,115 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:47:37,000 - plugin.dsDB - INFO - Adding event id 760408 to backlog.
+2013-10-11 11:48:15,065 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 11:52:38,267 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:40,546 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:42,776 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:45,039 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:47,269 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:49,562 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:51,887 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:54,118 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:56,364 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:52:58,595 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:00,825 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:03,118 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:05,349 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:07,581 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:09,812 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:12,042 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:14,273 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:16,503 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:18,782 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:21,012 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:23,243 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:25,473 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:27,704 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:29,936 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:32,165 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:34,397 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:36,690 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:38,921 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:41,151 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:43,444 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:45,676 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:47,907 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:50,138 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:52,414 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:54,989 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:57,220 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:53:59,497 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:01,727 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:03,959 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:06,190 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:08,421 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:10,651 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:12,881 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:15,160 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:17,391 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:19,762 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:21,993 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:24,239 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:26,470 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:28,700 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:30,931 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:33,209 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:35,456 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:37,686 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:39,917 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:42,148 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:44,378 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:46,609 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:48,903 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:51,148 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:53,380 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:55,611 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:54:57,842 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:00,088 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:02,335 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:04,611 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:06,842 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:09,073 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:11,305 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:13,535 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:15,766 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:17,996 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:20,321 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:22,552 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:24,782 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:27,013 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:29,244 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:31,490 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:33,940 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:36,171 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:39,040 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:41,272 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:43,503 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:45,733 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:47,964 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:50,194 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:52,441 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:54,734 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:56,966 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:55:59,197 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:01,411 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:03,642 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:05,872 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:08,104 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:10,381 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:12,628 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:14,858 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:17,089 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:19,321 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:21,598 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:23,828 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:26,059 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:28,290 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:30,520 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:32,752 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:34,983 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:37,213 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:39,506 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:41,737 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:43,969 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 11:56:46,198 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 760408.
+2013-10-11 12:11:52,201 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 162 Active
+2013-10-11 12:48:05,848 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2935 wtg
+2013-10-11 14:16:46,096 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2813 ip
+2013-10-11 14:16:47,312 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2813 ip
+2013-10-11 14:16:50,198 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2813 ip
+2013-10-11 14:16:53,786 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2813 ip

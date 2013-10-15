@@ -1,0 +1,88 @@
+2013-10-08 08:19:43,785 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2837 hld
+2013-10-08 08:20:59,881 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 566 ip
+2013-10-08 08:21:01,660 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2837 hld
+2013-10-08 08:22:07,430 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 216 fin
+2013-10-08 08:22:13,451 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 1352 fin
+2013-10-08 08:22:42,717 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2837 ip
+2013-10-08 08:26:05,766 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2832 fin
+2013-10-08 08:46:19,262 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 wtg
+2013-10-08 08:48:30,957 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 161 Done/Closed
+2013-10-08 08:48:33,421 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 162 Done/Closed
+2013-10-08 08:48:40,644 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 67 Done/Closed
+2013-10-08 08:48:43,171 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 158 Done/Closed
+2013-10-08 08:48:47,930 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 106 Done/Closed
+2013-10-08 08:49:31,611 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2921 cbb
+2013-10-08 08:49:34,964 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2921 fin
+2013-10-08 08:50:01,641 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2874 fin
+2013-10-08 08:50:05,946 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2861 fin
+2013-10-08 08:50:07,943 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2860 fin
+2013-10-08 08:50:09,877 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2876 fin
+2013-10-08 08:50:14,058 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2872 fin
+2013-10-08 08:50:43,979 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 603 fin
+2013-10-08 08:50:45,789 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 602 fin
+2013-10-08 08:50:49,017 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 579 fin
+2013-10-08 08:50:51,124 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 577 fin
+2013-10-08 08:50:55,960 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 578 fin
+2013-10-08 08:50:58,128 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 576 fin
+2013-10-08 08:51:18,970 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 157 Done/Closed
+2013-10-08 08:51:21,450 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 143 Done/Closed
+2013-10-08 08:55:38,210 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 165 Internal
+2013-10-08 08:55:40,676 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 153 Internal
+2013-10-08 08:55:43,171 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 113 Internal
+2013-10-08 09:44:59,301 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 wtg
+2013-10-08 09:45:00,424 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 wtg
+2013-10-08 09:45:03,138 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 wtg
+2013-10-08 09:50:19,851 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 wtg
+2013-10-08 09:51:17,102 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2847 wtg
+2013-10-08 10:17:23,095 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 ip
+2013-10-08 10:17:26,434 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 ip
+2013-10-08 10:17:26,917 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2847 ip
+2013-10-08 10:29:00,417 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 10:55:20,138 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 10:56:45,688 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 10:59:57,599 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:01:48,734 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:07:04,135 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-08 11:07:23,292 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:07:26,460 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:07:41,186 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:07:46,411 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:08:09,532 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:09:08,578 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:09:42,865 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:10:17,934 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:10:51,148 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:11:09,259 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:13:51,733 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:15:11,746 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:16:05,005 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:18:47,665 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:21:38,627 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:22:39,420 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:23:23,895 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:24:03,286 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:40:24,403 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:26,134 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 550 fin
+2013-10-08 11:40:30,096 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:30,642 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 549 fin
+2013-10-08 11:40:35,494 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:36,025 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 549 fin
+2013-10-08 11:40:38,473 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:39,005 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 549 fin
+2013-10-08 11:40:41,469 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 550 fin
+2013-10-08 11:40:43,871 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:46,680 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:47,148 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 549 fin
+2013-10-08 11:40:54,198 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:40:54,713 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:40:59,658 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:41:00,127 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:41:05,227 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:41:05,680 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 11:41:10,625 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-08 11:41:11,078 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-08 13:33:57,839 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-08 13:36:22,779 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-08 13:36:44,105 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-08 13:39:41,382 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-08 13:39:58,216 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act

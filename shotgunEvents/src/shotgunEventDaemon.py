@@ -39,9 +39,6 @@ import time
 import types
 import traceback
 
-
-sys.path.append('//vfx-data-server/dsGlobal/globalResources/Shotgun')
-
 from distutils.version import StrictVersion
 
 try:
@@ -56,6 +53,9 @@ if sys.platform == 'win32':
     import servicemanager
 
 import daemonizer
+
+sys.path.append('//vfx-data-server/dsGlobal/globalResources/Shotgun')
+
 import shotgun_api3 as sg
 
 

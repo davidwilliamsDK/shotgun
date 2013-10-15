@@ -9,12 +9,12 @@ import signal
 import sys
 import time
 
+sys.path.append('//vfx-data-server/dsGlobal/globalResources/Shotgun')
 
 if (hasattr(os, "devnull")):
     DEVNULL = os.devnull
 else:
     DEVNULL = "/dev/null"
-
 
 
 class Daemon(object):

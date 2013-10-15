@@ -1,3 +1,5 @@
+print "SG UTIL"
+
 import sys, re, os, string, shutil
 sys.path.append('//vfx-data-server/dsGlobal/globalResources/Shotgun')
 from shotgun_api3 import Shotgun

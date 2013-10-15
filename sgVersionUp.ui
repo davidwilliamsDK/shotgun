@@ -6,22 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>275</width>
-    <height>181</height>
+    <width>446</width>
+    <height>235</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>dsVersionUp</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>1</number>
-    </property>
+   <layout class="QGridLayout" name="gridLayout">
     <property name="margin">
      <number>1</number>
     </property>
-    <item>
+    <item row="0" column="0">
      <widget class="QLabel" name="version_L">
       <property name="font">
        <font>
@@ -37,7 +34,7 @@
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
      <widget class="QTextEdit" name="version_TE">
       <property name="minimumSize">
        <size>
@@ -92,7 +89,7 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item>
+    <item row="2" column="0">
      <widget class="QLabel" name="task_L">
       <property name="font">
        <font>
@@ -108,7 +105,7 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item>
+    <item row="3" column="0">
      <widget class="QTextEdit" name="task_TE">
       <property name="minimumSize">
        <size>
@@ -163,7 +160,7 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item>
+    <item row="4" column="0">
      <widget class="QComboBox" name="User_CB">
       <property name="minimumSize">
        <size>
@@ -179,7 +176,7 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item>
+    <item row="5" column="0">
      <widget class="QLabel" name="task_L_2">
       <property name="minimumSize">
        <size>
@@ -189,7 +186,7 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="maximumSize">
        <size>
-        <width>273</width>
+        <width>16777215</width>
         <height>16</height>
        </size>
       </property>
@@ -207,7 +204,7 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </item>
-    <item>
+    <item row="6" column="0">
      <widget class="QLineEdit" name="description_LE">
       <property name="minimumSize">
        <size>
@@ -226,6 +223,12 @@ p, li { white-space: pre-wrap; }
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>description_LE</tabstop>
+  <tabstop>version_TE</tabstop>
+  <tabstop>task_TE</tabstop>
+  <tabstop>User_CB</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

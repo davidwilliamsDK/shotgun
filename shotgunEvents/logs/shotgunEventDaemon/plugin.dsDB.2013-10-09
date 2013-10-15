@@ -1,0 +1,361 @@
+2013-10-09 08:17:30,736 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 08:49:43,206 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 08:50:45,996 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 368 fin
+2013-10-09 08:50:51,924 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2223 fin
+2013-10-09 08:50:54,904 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 371 fin
+2013-10-09 08:50:58,444 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2301 fin
+2013-10-09 08:51:03,109 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2236 fin
+2013-10-09 08:51:05,496 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2237 fin
+2013-10-09 08:51:08,007 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2238 fin
+2013-10-09 08:51:10,348 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2239 fin
+2013-10-09 08:51:12,796 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2513 fin
+2013-10-09 08:51:16,697 - plugin.dsDB - INFO - Adding event id 757727 to backlog.
+2013-10-09 08:51:44,278 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2222 fin
+2013-10-09 08:52:54,650 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 08:53:30,654 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2224 fin
+2013-10-09 08:53:33,197 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2225 fin
+2013-10-09 08:53:35,163 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2226 fin
+2013-10-09 08:53:37,394 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2227 fin
+2013-10-09 08:53:39,655 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2228 fin
+2013-10-09 08:53:42,260 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2229 fin
+2013-10-09 08:53:44,585 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2230 fin
+2013-10-09 08:53:46,785 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2231 fin
+2013-10-09 08:53:48,969 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2232 fin
+2013-10-09 08:53:51,168 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2233 fin
+2013-10-09 08:53:53,322 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2234 fin
+2013-10-09 08:53:55,473 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2235 fin
+2013-10-09 08:54:25,426 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 139 Active
+2013-10-09 08:55:17,108 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 08:55:44,581 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 08:56:19,743 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:21,973 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:24,252 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:26,483 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:28,713 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:30,944 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:33,174 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:35,405 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:37,683 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:39,914 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:42,144 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:44,983 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:47,214 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:49,446 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:51,677 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:53,970 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:56,200 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:56:58,430 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:00,661 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:02,892 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:05,124 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:07,355 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:09,631 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:11,862 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:14,094 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:16,325 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:18,555 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:20,755 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:23,032 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:25,263 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:27,493 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:29,724 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:31,956 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:34,187 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:36,417 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:38,694 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:40,926 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:43,157 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:45,388 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:47,618 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:49,848 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:52,079 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:54,358 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:56,588 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:57:58,819 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:01,049 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:05,246 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:07,476 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:09,755 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:11,986 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:14,216 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:16,447 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:18,677 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:20,908 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:23,186 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:25,417 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:27,648 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:29,878 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:32,109 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:34,325 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:36,555 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:38,880 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:41,111 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:43,357 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:45,743 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:48,068 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:50,424 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:52,763 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:55,042 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:57,272 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:58:59,503 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:01,733 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:03,964 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:06,694 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:08,987 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:11,219 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:14,042 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:16,849 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:19,081 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:21,312 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:23,542 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:25,821 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:28,051 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:30,282 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:32,513 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:34,743 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:36,974 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:39,204 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:41,483 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:43,713 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:45,944 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:48,174 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:50,405 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:52,637 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:54,868 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:57,144 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 08:59:59,375 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:01,607 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:03,838 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:06,069 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:08,299 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:10,529 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:12,808 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:15,039 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:17,269 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:19,500 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:21,730 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:23,961 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:26,193 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:28,486 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:30,717 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:33,525 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:35,755 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:37,986 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:40,217 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:42,494 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:44,724 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:46,956 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:49,187 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:51,417 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:53,648 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:55,878 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:00:58,157 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:00,388 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:02,618 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:04,848 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:07,049 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:09,279 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:11,510 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:13,788 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:16,019 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:18,250 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:20,480 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:22,711 - plugin.dsDB - WARNING - Timeout elapsed on backlog event id 757727.
+2013-10-09 09:01:23,849 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:01:47,296 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:03:40,834 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:03:55,545 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:08:30,901 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:10:00,726 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:10:06,311 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:10:27,276 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:11:45,153 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:12:49,628 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:13:43,338 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:13:46,645 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:13:51,716 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 09:14:24,085 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 10:13:13,171 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2831 fin
+2013-10-09 10:13:18,099 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2833 fin
+2013-10-09 10:13:20,081 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2837 fin
+2013-10-09 10:13:24,963 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2835 fin
+2013-10-09 10:13:26,914 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2836 fin
+2013-10-09 11:07:08,663 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:09,645 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:10,410 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:11,674 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:07:12,921 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:13,562 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:14,841 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:16,556 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:17,835 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:20,706 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:22,016 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:23,092 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:23,561 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:24,107 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:24,575 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:25,073 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:07:25,573 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:26,042 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:26,555 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:27,023 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:27,539 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:28,023 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:28,615 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:29,161 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:29,691 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:30,190 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:07:35,230 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:44,013 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:44,589 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:45,058 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:45,542 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:46,040 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:07:46,509 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:46,976 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:07:47,492 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:47,960 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:48,473 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:49,019 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:49,582 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:50,408 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:50,986 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:07:53,793 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:08:14,089 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:14,588 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:15,056 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:15,539 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:08:16,023 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:16,492 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:17,022 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:17,584 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:18,098 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:21,016 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:21,515 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:22,061 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:22,529 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:23,075 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:23,559 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:24,088 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:08:24,588 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:25,055 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:08:25,586 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:26,069 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:26,601 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:27,099 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:27,740 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:28,426 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:28,940 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:29,549 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:08:57,177 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:09:03,931 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:04,414 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:04,930 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:05,444 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:06,022 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:09:06,490 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:07,005 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:09:07,473 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:07,987 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:08,456 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:09,002 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:09,548 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:10,155 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:10,671 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:13,494 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:09:36,411 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:09:48,687 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:49,171 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:49,717 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:50,233 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:50,746 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:09:51,214 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:51,730 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:09:52,197 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:52,713 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:53,197 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:53,710 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:54,319 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:54,849 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:55,411 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:09:58,220 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:10:14,959 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:15,661 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:16,174 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:16,628 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:10:17,095 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:17,595 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:18,094 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:18,671 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:19,186 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:21,993 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:22,477 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:22,961 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:23,476 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:23,960 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:24,474 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:24,957 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:10:25,441 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:26,221 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 11:10:26,690 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:27,174 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:27,687 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:28,219 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:28,858 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:29,420 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:29,996 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:30,542 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:10:56,516 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:10:57,032 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:10:57,500 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:10:57,967 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:10:58,483 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:10:58,997 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:10:59,543 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:11:00,058 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:11:00,572 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:11:03,661 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:11:04,145 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:04,660 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:05,144 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:05,658 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:06,141 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:06,657 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-09 11:11:07,125 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:07,655 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:11:08,124 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:08,607 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:09,138 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:09,667 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:10,244 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:10,806 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:11,384 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:11,992 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:11:43,940 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2925 wtg
+2013-10-09 11:11:44,440 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2926 wtg
+2013-10-09 11:11:45,516 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2927 wtg
+2013-10-09 11:11:46,687 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2928 wtg
+2013-10-09 11:11:49,431 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2929 wtg
+2013-10-09 11:11:50,040 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2930 wtg
+2013-10-09 11:11:50,773 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 wtg
+2013-10-09 11:18:58,822 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 11:20:25,263 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 11:21:30,579 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-09 11:25:55,157 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-09 11:36:10,608 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 11:36:18,674 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 13:07:38,979 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2826 ip
+2013-10-09 13:07:40,180 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2826 ip
+2013-10-09 13:07:43,128 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2826 ip
+2013-10-09 13:07:45,953 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2826 ip
+2013-10-09 13:20:03,522 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 13:20:05,035 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 605 ip
+2013-10-09 13:21:12,223 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 13:21:14,579 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 606 ip
+2013-10-09 13:21:59,476 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 13:22:00,724 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 607 ip
+2013-10-09 13:22:36,323 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 13:22:36,822 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 608 ip
+2013-10-09 14:35:17,296 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 682 act
+2013-10-09 18:40:33,316 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd

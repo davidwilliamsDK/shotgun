@@ -1,61 +1,62 @@
-
-import sys, sip, re, os, shutil, subprocess, stat
-from PyQt4 import QtGui, QtCore, uic
+import sys, re, os, shutil, subprocess, stat, string
 import sgTools
 import dsCommon.dsOsUtil as dsOsUtil
 reload(dsOsUtil)
-
-if dsOsUtil.mayaRunning() == True:
-    import maya.cmds as cmds
-    import maya.OpenMayaUI as mui
-    
-def getMayaWindow():
-    'Get the maya main window as a QMainWindow instance'
-    ptr = mui.MQtUtil.mainWindow()
-    return sip.wrapinstance(long(ptr), QtCore.QObject)
-
-import dsCheck
-reload(dsCheck)
-dsCheck.dsMDCheck()
+import dsSQLTools as dsSQL
+import dsCheck;reload(dsCheck);dsCheck.dsMDCheck()
 
 if sys.platform == "linux2":
     uiFile = '/dsGlobal/dsCore/shotgun/sgVersionUp.ui'
 else:
     uiFile = '//vfx-data-server/dsGlobal/dsCore/shotgun/sgVersionUp.ui'
-  
-form_class, base_class = uic.loadUiType(uiFile)
+
+if dsOsUtil.mayaRunning() == True:
+    import maya.cmds as cmds
+    import maya.OpenMayaUI as mui
+    pyVal = dsOsUtil.getPyGUI()
+    
+if pyVal == "PySide":
+    from PySide import QtCore,QtGui
+    from shiboken import wrapInstance
+    form_class, base_class = dsOsUtil.loadUiType(uiFile)
+    
+if pyVal == "PyQt":
+    from PyQt4 import QtGui, QtCore, uic
+    import sip
+    form_class, base_class = uic.loadUiType(uiFile)
+
+def getMayaWindow():
+    main_window_ptr = mui.MQtUtil.mainWindow()
+    if pyVal == "PySide":
+        return wrapInstance(long(main_window_ptr), QtGui.QWidget)
+    else:
+        return sip.wrapinstance(long(main_window_ptr), QtCore.QObject)
+
 class Window(base_class, form_class):
-
-
-    def __init__( self, parent = getMayaWindow(), *args ):
-        super( base_class, self ).__init__( parent )
+    def __init__(self, parent=getMayaWindow()):
+        super(Window, self).__init__(parent)
         self.setupUi(self)
-        self.setUp()
-        
-    def setUp(self):
-        
-        self.filePath = cmds.file(q=True,sn=True)
-        
-        if sys.platform == "linux2":
-            self.filePath = self.filePath.replace("P:","//vfx-data-server/dsPipe")
-            self.home = os.getenv("HOME")
-            self.config_dir = '%s/.versionUp' % (self.home)
-            self.config_path = '%s/config.ini' % (self.config_dir)
 
-        elif sys.platform == 'win32':
-            self.home = 'C:%s' % os.getenv("HOMEPATH")
-            self.config_dir = '%s/.versionUp' % (self.home)
-            self.config_dir = self.config_dir.replace("/","\\")
-            self.config_path = '%s/config.ini' % (self.config_dir)
-            self.config_path = self.config_path.replace("/","\\")
+        self.filePath = cmds.file(q=True,sn=True)
+        print string.rsplit(self.filePath,"/",1)[1]
+
+        self.home = 'C:%s' % os.getenv("HOMEPATH")
+        self.config_dir = '%s/.versionUp' % (self.home)
+        self.config_dir = self.config_dir.replace("/","\\")
+        self.config_path = '%s/config.ini' % (self.config_dir)
+        self.config_path = self.config_path.replace("/","\\")
         
         self.GetUser()
         self.load_config()
+        #self.updateVersionName()
         
         sgTask = cmds.getAttr("dsMetaData.sgTask")
+        self.testVersion()
         sgVersion = cmds.getAttr("dsMetaData.Version")
+        
         self.version_TE.setText(sgVersion)
         self.task_TE.setText(sgTask)
+        
         
         """ Test if shot or seq based file"""
 
@@ -66,25 +67,50 @@ class Window(base_class, form_class):
 
         self.pathDict = sgTools.sgShotPathParce(self.filePath)
         self.check = self.checkLocalVersion(self.filePath,self.pathDict)
-        
+        self.updateVersionName()
+                
         """ actions """
         
         self.User_CB.currentIndexChanged.connect(self.save_config)
+        self.User_CB.currentIndexChanged.connect(self.updateVersionName)
         self.description_LE.returnPressed.connect(self.doIT)
         #self.description_LE.returnPressed.connect(self.sgCreateShotVersion)
 
+
+    def testVersion(self):
+        versionPath = string.rsplit(self.filePath,"/",1)[0] + "/version/" + string.rsplit(self.filePath,"/",1)[1]
+        print versionPath
+        if not os.path.isdir(versionPath):
+            print "no version Created Yet"
+            cmds.setAttr("dsMetaData.Version",string.rsplit(self.filePath,"/",1)[1],type="string")
+        else:
+            print "version Located"
+            tmpList = os.listdir(versionPath)
+            for t in tmpList:
+                cmds.setAttr("dsMetaData.Version",t,type="string")
+                
     def GetUser(self):
         ##Test and return if Episode exists
         self.User_CB.clear()
         self.userDict = {}
+        
         self.group = {'type': 'Group', 'id': 5}
         self.myPeople = sgTools.sgGetPeople()
         for user in sorted(self.myPeople):
+            tmpList = []
             if str(user['sg_status_list']) == "act":
                 userName = str(user['name'])
+                tmpList.append(user['id'])
+                tmpList.append(user['sg_initials'])
+                self.userDict[userName] = tmpList
                 self.User_CB.addItem(userName)
-                self.userDict['id'] = user['id']
-                self.userDict['sg_initials'] = user['sg_initials']
+
+    def updateVersionName(self):
+        us = self.User_CB.currentText()
+        self.duckInitials = self.userDict[str(us)][1]
+        self.versionUp(self.filePath,self.check,False)
+        cmds.setAttr("dsMetaData.Version",str(self.version_file_name),type="string")
+        self.version_TE.setText(self.version_file_name)
         
     def doIT(self):
         duckUser = self.User_CB.currentText()
@@ -97,12 +123,11 @@ class Window(base_class, form_class):
         thumbPath = sgTools.sgThumbnail(self.filePath,self.check,True)
         description = str(self.description_LE.text())
         
-        if description != "":
+        if description is not "":
             self.sgTaskID = cmds.getAttr('dsMetaData.sgTaskID')
             self.versionUp(self.filePath,self.check,False)
             
             cmds.setAttr("dsMetaData.User",str(duckUser),type="string")
-            cmds.setAttr("dsMetaData.Version",str(self.version_file_name),type="string")
 
             save = cmds.file(save=True, force=True)
             self.versionUp(self.filePath,self.check,True)
@@ -124,22 +149,26 @@ class Window(base_class, form_class):
                             shot = sSplit[-1]
                         sName = shot
                         break
-                
-            self.connect2SG(sName)
+            try:
+                self.connect2SG(sName)
+                if self.wf == "shot":
+                    data = {'code':self.version_file_name,'project':self.proj,'user':self.currentUser,'sg_task':self.taskObj,'sg_file_name':heroName,'sg_path':self.path_version_file,'description':description,'image':thumbPath,'sg_version_file_name':self.version_file_name,'entity':self.shotObj}
+                else:
+                    data = {'code':self.version_file_name,'project':self.proj,'user':self.currentUser,'sg_task':self.taskObj,'sg_file_name':heroName,'sg_path':self.path_version_file,'description':description,'image':thumbPath,'sg_version_file_name':self.version_file_name,'entity':self.seqObj}
+               
+                result = sgTools.sgCreateObj('Version',data)
+                print "created " + self.version_file_name + " in shotGun"
             
-            if self.wf == "shot":
-                data = {'code':self.version_file_name,'project':self.proj,'user':self.currentUser,'sg_task':self.taskObj,'sg_file_name':heroName,'sg_path':self.path_version_file,'description':description,'image':thumbPath,'sg_version_file_name':self.version_file_name,'entity':self.shotObj}
-            else:
-                data = {'code':self.version_file_name,'project':self.proj,'user':self.currentUser,'sg_task':self.taskObj,'sg_file_name':heroName,'sg_path':self.path_version_file,'description':description,'image':thumbPath,'sg_version_file_name':self.version_file_name,'entity':self.seqObj}
-           
-            result = sgTools.sgCreateObj('Version',data)
-            print "created " + self.version_file_name + " in shotGun"
-        
-        self.close()
-        
+            except:
+                print "no camera seq or shotname in file name to establish shot.. adding to sequence"
+
         self.check = self.checkLocalVersion(self.filePath,self.pathDict)
         self.versionUp(self.filePath,self.check,False)
         cmds.setAttr("dsMetaData.Version",str(self.version_file_name),type="string")
+        
+        dsVerWindow.close()
+        #self.close()
+        
 
     def versionUp(self,filePath,version,val):
         if not re.search("/version/",filePath):
@@ -148,7 +177,9 @@ class Window(base_class, form_class):
             versionPath = versionPath + "/" + filePathList[-1]
             if not os.path.isdir(versionPath):
                 os.makedirs(versionPath)
-            self.version_file_name = filePathList[-1].replace(".ma","_" + version + "_" + self.duckInitials +  ".ma")
+                
+            self.version_file_name = filePathList[-1].replace(self.ext,"_" + version + "_" + self.duckInitials +  self.ext)
+            cmds.setAttr("dsMetaData.Version",str(self.version_file_name),type="string")
             self.path_version_file = versionPath + "/" + self.version_file_name
             
             if val == True:
@@ -187,15 +218,17 @@ class Window(base_class, form_class):
         
         self.taskObj = sgTools.sgGetObjbyID("Task",int(TaskID),[])
         
-
     def checkLocalVersion(self,filePath,pathDict):
         tmpList = []
         if re.search(".ma",filePath):
+            self.ext = ".ma"
             dirPath = filePath.replace(self.pathDict['fileName'] + '.ma',"")
-            self.fn = self.pathDict['fileName'] + '.ma'
+            
+            self.fn = self.pathDict['fileName'] + self.ext
         if re.search(".mb",filePath):
+            self.ext = ".mb"
             dirPath = filePath.replace(self.pathDict['fileName'] + '.mb',"")
-            self.fn = self.pathDict['fileName'] + '.mb'
+            self.fn = self.pathDict['fileName'] + self.ext
         local = os.listdir(dirPath)
         
         if "version" in local:
@@ -252,6 +285,10 @@ class Window(base_class, form_class):
 
 
 def dsVersionUp():
-    global myWindow
-    myWindow = Window()
-    myWindow.show()
+    global dsVerWindow
+    try:
+        dsVerWindow.close()
+    except:
+        pass
+    dsVerWindow = Window()
+    dsVerWindow.show()

@@ -1,0 +1,134 @@
+2013-10-08 08:19:44,642 - plugin.dsStatus.callback_shotUpdate - INFO - hld
+2013-10-08 08:20:59,881 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:21:02,456 - plugin.dsStatus.callback_shotUpdate - INFO - hld
+2013-10-08 08:22:04,730 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:22:04,730 - plugin.dsStatus.callback_shotUpdate - INFO - 1352
+2013-10-08 08:22:07,430 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:22:08,226 - plugin.dsStatus.callback_seqUpdate - INFO - 216
+2013-10-08 08:22:08,709 - plugin.dsStatus.callback_seqUpdate - INFO - 1352
+2013-10-08 08:22:08,973 - plugin.dsStatus.callback_seqUpdate - INFO - 1353
+2013-10-08 08:22:09,207 - plugin.dsStatus.callback_seqUpdate - INFO - 1354
+2013-10-08 08:22:09,505 - plugin.dsStatus.callback_seqUpdate - INFO - 1355
+2013-10-08 08:22:09,786 - plugin.dsStatus.callback_seqUpdate - INFO - 1356
+2013-10-08 08:22:09,786 - plugin.dsStatus.callback_seqUpdate - INFO - 216
+2013-10-08 08:22:13,670 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:22:13,670 - plugin.dsStatus.callback_shotUpdate - INFO - 1352
+2013-10-08 08:22:42,997 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-08 08:26:06,562 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:26:06,562 - plugin.dsStatus.callback_shotUpdate - INFO - 2832
+2013-10-08 08:46:20,058 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-08 08:49:32,405 - plugin.dsStatus.callback_shotUpdate - INFO - cbb
+2013-10-08 08:49:35,198 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:49:35,198 - plugin.dsStatus.callback_shotUpdate - INFO - 2921
+2013-10-08 08:50:01,921 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:50:01,921 - plugin.dsStatus.callback_shotUpdate - INFO - 2874
+2013-10-08 08:50:06,164 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:50:06,164 - plugin.dsStatus.callback_shotUpdate - INFO - 2861
+2013-10-08 08:50:08,177 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:50:08,177 - plugin.dsStatus.callback_shotUpdate - INFO - 2860
+2013-10-08 08:50:10,095 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:50:10,095 - plugin.dsStatus.callback_shotUpdate - INFO - 2876
+2013-10-08 08:50:14,292 - plugin.dsStatus.callback_shotUpdate - INFO - fin
+2013-10-08 08:50:14,292 - plugin.dsStatus.callback_shotUpdate - INFO - 2872
+2013-10-08 08:50:43,994 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:50:44,821 - plugin.dsStatus.callback_seqUpdate - INFO - 603
+2013-10-08 08:50:45,273 - plugin.dsStatus.callback_seqUpdate - INFO - 2921
+2013-10-08 08:50:45,289 - plugin.dsStatus.callback_seqUpdate - INFO - 603
+2013-10-08 08:50:45,789 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:50:46,085 - plugin.dsStatus.callback_seqUpdate - INFO - 602
+2013-10-08 08:50:46,302 - plugin.dsStatus.callback_seqUpdate - INFO - 602
+2013-10-08 08:50:49,017 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:50:49,236 - plugin.dsStatus.callback_seqUpdate - INFO - 579
+2013-10-08 08:50:49,688 - plugin.dsStatus.callback_seqUpdate - INFO - 2876
+2013-10-08 08:50:49,688 - plugin.dsStatus.callback_seqUpdate - INFO - 579
+2013-10-08 08:50:51,124 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:50:51,342 - plugin.dsStatus.callback_seqUpdate - INFO - 577
+2013-10-08 08:50:51,841 - plugin.dsStatus.callback_seqUpdate - INFO - 2860
+2013-10-08 08:50:52,075 - plugin.dsStatus.callback_seqUpdate - INFO - 2861
+2013-10-08 08:50:52,293 - plugin.dsStatus.callback_seqUpdate - INFO - 2874
+2013-10-08 08:50:52,293 - plugin.dsStatus.callback_seqUpdate - INFO - 577
+2013-10-08 08:50:55,960 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:50:56,177 - plugin.dsStatus.callback_seqUpdate - INFO - 578
+2013-10-08 08:50:56,693 - plugin.dsStatus.callback_seqUpdate - INFO - 2872
+2013-10-08 08:50:56,693 - plugin.dsStatus.callback_seqUpdate - INFO - 578
+2013-10-08 08:50:58,128 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 08:50:58,517 - plugin.dsStatus.callback_seqUpdate - INFO - 576
+2013-10-08 08:50:58,986 - plugin.dsStatus.callback_seqUpdate - INFO - 2859
+2013-10-08 08:50:58,986 - plugin.dsStatus.callback_seqUpdate - INFO - 576
+2013-10-08 09:45:00,081 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-08 09:45:00,642 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-08 09:45:03,372 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-08 09:50:20,661 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-08 09:51:17,368 - plugin.dsStatus.callback_shotUpdate - INFO - wtg
+2013-10-08 10:17:23,907 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-08 10:17:26,667 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-08 10:17:27,198 - plugin.dsStatus.callback_shotUpdate - INFO - ip
+2013-10-08 10:29:00,417 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 10:55:20,154 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 10:56:45,720 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 10:59:57,647 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:01:48,734 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:07:04,198 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:07:23,309 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:07:26,460 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:07:41,186 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:07:46,411 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:08:09,546 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:09:08,578 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:09:42,865 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:10:17,934 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:10:51,163 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:11:09,259 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:13:51,749 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:15:11,746 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:16:05,005 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:18:47,697 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:21:38,627 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:22:39,420 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:23:23,911 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:24:03,286 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:24,450 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:26,134 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 11:40:26,914 - plugin.dsStatus.callback_seqUpdate - INFO - 550
+2013-10-08 11:40:27,367 - plugin.dsStatus.callback_seqUpdate - INFO - 2792
+2013-10-08 11:40:27,585 - plugin.dsStatus.callback_seqUpdate - INFO - 2793
+2013-10-08 11:40:27,601 - plugin.dsStatus.callback_seqUpdate - INFO - 550
+2013-10-08 11:40:30,096 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:30,642 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 11:40:30,861 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:31,361 - plugin.dsStatus.callback_seqUpdate - INFO - 2787
+2013-10-08 11:40:31,361 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:35,494 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:36,025 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 11:40:36,243 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:36,710 - plugin.dsStatus.callback_seqUpdate - INFO - 2787
+2013-10-08 11:40:36,710 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:38,473 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:39,005 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 11:40:39,239 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:39,707 - plugin.dsStatus.callback_seqUpdate - INFO - 2787
+2013-10-08 11:40:39,707 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:41,469 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 11:40:41,687 - plugin.dsStatus.callback_seqUpdate - INFO - 550
+2013-10-08 11:40:42,140 - plugin.dsStatus.callback_seqUpdate - INFO - 2792
+2013-10-08 11:40:42,390 - plugin.dsStatus.callback_seqUpdate - INFO - 2793
+2013-10-08 11:40:42,390 - plugin.dsStatus.callback_seqUpdate - INFO - 550
+2013-10-08 11:40:43,871 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:46,680 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:47,148 - plugin.dsStatus.callback_seqUpdate - INFO - update sequence
+2013-10-08 11:40:47,381 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:47,834 - plugin.dsStatus.callback_seqUpdate - INFO - 2787
+2013-10-08 11:40:47,834 - plugin.dsStatus.callback_seqUpdate - INFO - 549
+2013-10-08 11:40:54,198 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:54,713 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:40:59,674 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:41:00,127 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:41:05,227 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:41:05,680 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:41:10,625 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 11:41:11,078 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 13:33:57,855 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 13:36:22,779 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 13:36:44,105 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 13:39:41,382 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode
+2013-10-08 13:39:58,216 - plugin.dsStatus.callback_episodeUpdate - INFO - update Episode

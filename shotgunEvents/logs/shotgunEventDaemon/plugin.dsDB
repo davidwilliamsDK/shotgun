@@ -1,0 +1,46 @@
+2013-10-15 08:48:38,105 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 704 act
+2013-10-15 08:48:43,736 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 704 act
+2013-10-15 10:41:03,510 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-15 10:41:13,651 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 684 clsd
+2013-10-15 10:41:29,983 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-15 11:07:13,825 - plugin.dsDB.callback_projectUpdate - INFO - REBUILDING GLOBAL PROJECTS 
+2013-10-15 11:07:14,059 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 167 Active
+2013-10-15 11:07:14,292 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 167 Active
+2013-10-15 11:22:20,112 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2931 fin
+2013-10-15 12:11:20,197 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 687 act
+2013-10-15 14:52:20,280 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 ip
+2013-10-15 14:52:22,404 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 ip
+2013-10-15 14:52:26,167 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 ip
+2013-10-15 14:52:27,072 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2841 ip
+2013-10-15 14:52:28,055 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2841 ip
+2013-10-15 14:52:29,023 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2841 ip
+2013-10-15 14:52:29,992 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2841 ip
+2013-10-15 14:52:33,911 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2847 ip
+2013-10-15 14:52:34,924 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2847 ip
+2013-10-15 14:52:35,954 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 ip
+2013-10-15 14:52:36,924 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 ip
+2013-10-15 14:52:37,953 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2844 ip
+2013-10-15 14:52:38,905 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2847 ip
+2013-10-15 14:52:42,621 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 ip
+2013-10-15 14:52:43,542 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2841 ip
+2013-10-15 14:52:44,526 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2847 ip
+2013-10-15 14:52:45,555 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2848 ip
+2013-10-15 15:43:26,387 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 706 act
+2013-10-15 15:51:14,384 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 614 ip
+2013-10-15 15:51:14,854 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 614 ip
+2013-10-15 15:51:15,414 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 614 ip
+2013-10-15 15:51:16,460 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 706 act
+2013-10-15 15:51:20,441 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:21,473 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:21,957 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:22,503 - plugin.dsDB.callback_seqUpdate - INFO - MODIFY SEQUENCE 614 ip
+2013-10-15 15:51:22,971 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:23,502 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:23,970 - plugin.dsDB.callback_episodeUpdate - INFO - MODIFY EPISODE 706 act
+2013-10-15 15:51:24,454 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:25,094 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:25,625 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:51:26,203 - plugin.dsDB.callback_shotUpdate - INFO - MODIFY SHOT 2937 wtg
+2013-10-15 15:52:35,614 - plugin.dsDB.callback_projectUpdate - INFO - REBUILDING GLOBAL PROJECTS 
+2013-10-15 15:52:35,848 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 168 Active
+2013-10-15 15:52:36,082 - plugin.dsDB.callback_projectUpdate - INFO - MODIFY GLOBAL PROJECTS 168 Active
